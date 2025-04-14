@@ -1,13 +1,18 @@
 
 import { Link } from "react-router-dom";
-import { Button, ButtonProps } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { ButtonProps } from "@/components/ui/button";
 
-interface CTAButtonProps extends ButtonProps {
+// Create a custom type for button variants
+type CTAVariant = "default" | "outline" | "black" | "white";
+
+interface CTAButtonProps {
   text: string;
   to: string;
   icon?: boolean;
-  variant?: "default" | "outline" | "black" | "white";
+  variant?: CTAVariant;
+  className?: string;
 }
 
 const CTAButton = ({ 
@@ -37,7 +42,7 @@ const CTAButton = ({
   return (
     <Button 
       asChild 
-      className={`rounded-md font-medium ${buttonClass} ${className}`}
+      className={`rounded-md font-medium ${buttonClass} ${className || ""}`}
       {...props}
     >
       <Link to={to} className="inline-flex items-center">

@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { 
   Form, 
   FormControl, 
@@ -22,6 +23,8 @@ import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import SectionHeader from "@/components/shared/SectionHeader";
 import CTAButton from "@/components/shared/CTAButton";
+import * as z from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const services = [
   { value: "website-development", label: "Full Stack Website Development" },
@@ -36,12 +39,34 @@ const services = [
   { value: "review-management", label: "Review Collection & Management" }
 ];
 
+// Define form schema with Zod
+const formSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Please enter a valid email address"),
+  phone: z.string().optional(),
+  service: z.string().optional(),
+  message: z.string().min(10, "Message must be at least 10 characters")
+});
+
+type ContactFormValues = z.infer<typeof formSchema>;
+
 const Contact = () => {
   const [loading, setLoading] = useState(false);
   const { toast } = useToast();
   
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  // Initialize form with react-hook-form and zod resolver
+  const form = useForm<ContactFormValues>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      service: "",
+      message: ""
+    }
+  });
+  
+  const onSubmit = (data: ContactFormValues) => {
     setLoading(true);
     
     // Simulate form submission
@@ -51,7 +76,7 @@ const Contact = () => {
         title: "Message sent!",
         description: "We'll get back to you as soon as possible.",
       });
-      // Reset form would be here if this was a real form
+      form.reset();
     }, 1500);
   };
   
@@ -157,61 +182,100 @@ const Contact = () => {
               <div id="contact-form" className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
                 <h2 className="text-2xl font-semibold mb-6">Send Us a Message</h2>
                 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <FormLabel htmlFor="name">Full Name</FormLabel>
-                      <FormControl>
-                        <Input id="name" placeholder="John Doe" required />
-                      </FormControl>
-                    </div>
-                    
-                    <div>
-                      <FormLabel htmlFor="email">Email</FormLabel>
-                      <FormControl>
-                        <Input id="email" type="email" placeholder="john@example.com" required />
-                      </FormControl>
-                    </div>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <FormLabel htmlFor="phone">Phone (Optional)</FormLabel>
-                      <FormControl>
-                        <Input id="phone" placeholder="+1 (555) 123-4567" />
-                      </FormControl>
-                    </div>
-                    
-                    <div>
-                      <FormLabel htmlFor="service">Service of Interest</FormLabel>
-                      <Select>
-                        <SelectTrigger id="service">
-                          <SelectValue placeholder="Select a service" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {services.map((service) => (
-                            <SelectItem key={service.value} value={service.value}>
-                              {service.label}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <FormLabel htmlFor="message">Message</FormLabel>
-                    <FormControl>
-                      <Textarea 
-                        id="message" 
-                        placeholder="Tell us about your project or inquiry..." 
-                        rows={5}
-                        required
+                <Form {...form}>
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <FormField
+                        control={form.control}
+                        name="name"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Full Name</FormLabel>
+                            <FormControl>
+                              <Input placeholder="John Doe" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
                       />
-                    </FormControl>
-                  </div>
-                  
-                  <div>
+                      
+                      <FormField
+                        control={form.control}
+                        name="email"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Email</FormLabel>
+                            <FormControl>
+                              <Input type="email" placeholder="john@example.com" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <FormField
+                        control={form.control}
+                        name="phone"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Phone (Optional)</FormLabel>
+                            <FormControl>
+                              <Input placeholder="+1 (555) 123-4567" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      
+                      <FormField
+                        control={form.control}
+                        name="service"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Service of Interest</FormLabel>
+                            <Select 
+                              onValueChange={field.onChange} 
+                              defaultValue={field.value}
+                            >
+                              <FormControl>
+                                <SelectTrigger>
+                                  <SelectValue placeholder="Select a service" />
+                                </SelectTrigger>
+                              </FormControl>
+                              <SelectContent>
+                                {services.map((service) => (
+                                  <SelectItem key={service.value} value={service.value}>
+                                    {service.label}
+                                  </SelectItem>
+                                ))}
+                              </SelectContent>
+                            </Select>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+                    
+                    <FormField
+                      control={form.control}
+                      name="message"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Message</FormLabel>
+                          <FormControl>
+                            <Textarea 
+                              placeholder="Tell us about your project or inquiry..." 
+                              rows={5}
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    
                     <Button 
                       type="submit" 
                       className="w-full bg-hustle-accent hover:bg-hustle-accent/90"
@@ -219,8 +283,8 @@ const Contact = () => {
                     >
                       {loading ? "Sending..." : "Send Message"}
                     </Button>
-                  </div>
-                </form>
+                  </form>
+                </Form>
               </div>
             </div>
           </div>
