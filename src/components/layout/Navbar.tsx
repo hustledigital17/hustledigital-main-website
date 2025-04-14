@@ -31,6 +31,11 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
+  const handleLinkClick = () => {
+    closeMenu();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -39,7 +44,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link to="/" className="flex items-center" onClick={closeMenu}>
+          <Link to="/" className="flex items-center" onClick={handleLinkClick}>
             <span className="text-xl font-bold tracking-tight">
               Hustle Digital
             </span>
@@ -47,20 +52,20 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-sm font-medium hover:text-hustle-accent transition-colors">
+            <Link to="/" className="text-sm font-medium hover:text-hustle-accent transition-colors" onClick={handleLinkClick}>
               Home
             </Link>
-            <Link to="/about" className="text-sm font-medium hover:text-hustle-accent transition-colors">
+            <Link to="/about" className="text-sm font-medium hover:text-hustle-accent transition-colors" onClick={handleLinkClick}>
               About
             </Link>
-            <Link to="/services" className="text-sm font-medium hover:text-hustle-accent transition-colors">
+            <Link to="/services" className="text-sm font-medium hover:text-hustle-accent transition-colors" onClick={handleLinkClick}>
               Services
             </Link>
-            <Link to="/contact" className="text-sm font-medium hover:text-hustle-accent transition-colors">
+            <Link to="/contact" className="text-sm font-medium hover:text-hustle-accent transition-colors" onClick={handleLinkClick}>
               Contact
             </Link>
             <Button asChild size="sm" className="bg-hustle-accent hover:bg-hustle-accent/90">
-              <Link to="/contact">Book Appointment</Link>
+              <Link to="/contact" onClick={handleLinkClick}>Book Appointment</Link>
             </Button>
           </nav>
 
@@ -82,34 +87,34 @@ const Navbar = () => {
             <Link 
               to="/" 
               className="block py-3 text-base font-medium border-b border-gray-100"
-              onClick={closeMenu}
+              onClick={handleLinkClick}
             >
               Home
             </Link>
             <Link 
               to="/about" 
               className="block py-3 text-base font-medium border-b border-gray-100"
-              onClick={closeMenu}
+              onClick={handleLinkClick}
             >
               About
             </Link>
             <Link 
               to="/services" 
               className="block py-3 text-base font-medium border-b border-gray-100"
-              onClick={closeMenu}
+              onClick={handleLinkClick}
             >
               Services
             </Link>
             <Link 
               to="/contact" 
               className="block py-3 text-base font-medium"
-              onClick={closeMenu}
+              onClick={handleLinkClick}
             >
               Contact
             </Link>
             <div className="pt-4">
               <Button asChild className="w-full bg-hustle-accent hover:bg-hustle-accent/90">
-                <Link to="/contact" onClick={closeMenu}>Book Appointment</Link>
+                <Link to="/contact" onClick={handleLinkClick}>Book Appointment</Link>
               </Button>
             </div>
           </div>

@@ -13,6 +13,7 @@ interface CTAButtonProps {
   icon?: boolean;
   variant?: CTAVariant;
   className?: string;
+  size?: "default" | "sm" | "lg" | "icon";
 }
 
 const CTAButton = ({ 
@@ -21,6 +22,7 @@ const CTAButton = ({
   icon = true, 
   variant = "default",
   className,
+  size = "default",
   ...props 
 }: CTAButtonProps) => {
   let buttonClass = "";
@@ -39,13 +41,19 @@ const CTAButton = ({
       buttonClass = "bg-hustle-accent text-white hover:bg-hustle-accent/90";
   }
   
+  const handleClick = () => {
+    // Scroll to top when link is clicked
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  
   return (
     <Button 
       asChild 
       className={`rounded-md font-medium ${buttonClass} ${className || ""}`}
+      size={size}
       {...props}
     >
-      <Link to={to} className="inline-flex items-center">
+      <Link to={to} className="inline-flex items-center" onClick={handleClick}>
         {text}
         {icon && <ArrowRight size={16} className="ml-2" />}
       </Link>
