@@ -1,7 +1,8 @@
-
 import { Code, LayoutGrid, BriefcaseIcon, Search, Users, Mail, TrendingUp, FileText, Camera, Star } from "lucide-react";
 import SectionHeader from "@/components/shared/SectionHeader";
 import CTAButton from "@/components/shared/CTAButton";
+import AnalyticsVisual from "@/components/shared/AnalyticsVisual";
+import SocialMediaLinks from "@/components/shared/SocialMediaLinks";
 
 // Service data
 const services = [
@@ -152,6 +153,63 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Analytics Visual Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex flex-col md:flex-row items-center">
+            <div className="w-full md:w-1/2 mb-10 md:mb-0">
+              <SectionHeader
+                subtitle="Data-Driven Approach"
+                title="Analytics That Drive Results"
+                description="We leverage comprehensive analytics and data visualization to make informed decisions that maximize your marketing ROI."
+                center={false}
+              />
+              <div className="mt-6 space-y-4">
+                <div className="flex items-start">
+                  <div className="mr-2 mt-1 text-hustle-accent">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.66674 10.1147L12.7947 3.98602L13.7381 4.92935L6.66674 12.0007L2.42407 7.75802L3.36741 6.81468L6.66674 10.1147Z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                  <span className="text-hustle-light">Real-time performance tracking</span>
+                </div>
+                <div className="flex items-start">
+                  <div className="mr-2 mt-1 text-hustle-accent">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.66674 10.1147L12.7947 3.98602L13.7381 4.92935L6.66674 12.0007L2.42407 7.75802L3.36741 6.81468L6.66674 10.1147Z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                  <span className="text-hustle-light">Conversion optimization</span>
+                </div>
+                <div className="flex items-start">
+                  <div className="mr-2 mt-1 text-hustle-accent">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.66674 10.1147L12.7947 3.98602L13.7381 4.92935L6.66674 12.0007L2.42407 7.75802L3.36741 6.81468L6.66674 10.1147Z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                  <span className="text-hustle-light">Comprehensive reporting</span>
+                </div>
+                <div className="flex items-start">
+                  <div className="mr-2 mt-1 text-hustle-accent">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.66674 10.1147L12.7947 3.98602L13.7381 4.92935L6.66674 12.0007L2.42407 7.75802L3.36741 6.81468L6.66674 10.1147Z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                  <span className="text-hustle-light">Actionable insights</span>
+                </div>
+              </div>
+              <div className="mt-8">
+                <p className="text-hustle-light mb-4">Connect with us to learn more about our data-driven approach:</p>
+                <SocialMediaLinks showEmail={true} />
+              </div>
+            </div>
+            <div className="w-full md:w-1/2">
+              <AnalyticsVisual />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services List */}
       <section className="py-16">
         <div className="container mx-auto px-4 md:px-6">
@@ -249,8 +307,11 @@ const Services = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 opacity-0 animate-fade-in">
               Ready to Elevate Your Digital Presence?
             </h2>
-            <p className="text-lg mb-8 text-hustle-light opacity-0 animate-fade-in animate-delay-100">
+            <p className="text-lg mb-4 text-hustle-light opacity-0 animate-fade-in animate-delay-100">
               Schedule a free consultation to discuss how our services can help your business grow.
+            </p>
+            <p className="text-lg mb-8 text-hustle-light opacity-0 animate-fade-in animate-delay-100">
+              Email us directly at <a href="mailto:hustledigi@gmail.com" className="text-hustle-accent hover:underline">hustledigi@gmail.com</a>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fade-in animate-delay-200">
               <CTAButton 
@@ -264,6 +325,10 @@ const Services = () => {
                 variant="outline"
                 size="lg"
               />
+            </div>
+            <div className="mt-8 opacity-0 animate-fade-in animate-delay-300">
+              <p className="text-hustle-light mb-4">Connect with us on social media:</p>
+              <SocialMediaLinks className="justify-center" />
             </div>
           </div>
         </div>

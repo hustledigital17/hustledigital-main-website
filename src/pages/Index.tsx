@@ -17,6 +17,7 @@ import ServiceCard from "@/components/shared/ServiceCard";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
+import BusinessAnalyticsImage from "@/components/shared/BusinessAnalyticsImage";
 
 const Index = () => {
   return (
@@ -51,12 +52,7 @@ const Index = () => {
             </div>
             
             <div className="w-full md:w-1/2 opacity-0 animate-fade-in animate-delay-200">
-              <div className="relative flex justify-center items-center p-10">
-                <div className="absolute w-64 h-64 bg-hustle-accent/10 rounded-full"></div>
-                <div className="relative z-10 transform transition-all duration-500 hover:scale-110">
-                  <MonitorSmartphone size={240} className="text-hustle-accent" />
-                </div>
-              </div>
+              <BusinessAnalyticsImage />
             </div>
           </div>
         </div>
@@ -251,7 +247,7 @@ const Index = () => {
         </div>
       </section>
       
-      {/* FAQ Section - MOVED below CTA */}
+      {/* FAQ Section - Now positioned below CTA */}
       <section className="py-20" id="faq-section">
         <div className="container mx-auto px-4 md:px-6">
           <SectionHeader
@@ -287,6 +283,15 @@ const Index = () => {
                 </AccordionTrigger>
                 <AccordionContent className="text-black">
                   Our free consultation includes a comprehensive review of your current digital presence, identification of key opportunities for growth, and a preliminary strategy discussion. We'll analyze your competitors, assess your market position, and outline potential strategies tailored to your business goals.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-4">
+                <AccordionTrigger className="text-left text-lg font-medium">
+                  How can I contact Hustle Digital?
+                </AccordionTrigger>
+                <AccordionContent className="text-black">
+                  You can reach our team directly at <a href="mailto:hustledigi@gmail.com" className="text-hustle-accent hover:underline">hustledigi@gmail.com</a>, through our contact form, or via our social media channels. We aim to respond to all inquiries within 24 business hours.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
