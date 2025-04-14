@@ -1,5 +1,6 @@
 
 import { Link } from "react-router-dom";
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone } from "lucide-react";
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -13,6 +14,20 @@ const Footer = () => {
             <p className="text-gray-400 mb-4">
               Transforming digital presence with strategy-led digital marketing solutions.
             </p>
+            <div className="flex space-x-4 mt-6">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-gray-400 hover:text-hustle-accent transition-colors">
+                <Facebook size={20} />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-gray-400 hover:text-hustle-accent transition-colors">
+                <Twitter size={20} />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-gray-400 hover:text-hustle-accent transition-colors">
+                <Instagram size={20} />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-gray-400 hover:text-hustle-accent transition-colors">
+                <Linkedin size={20} />
+              </a>
+            </div>
           </div>
           
           <div>
@@ -70,8 +85,16 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-medium mb-4">Contact Us</h4>
             <ul className="space-y-2 text-gray-400">
-              <li>hello@hustledigital.com</li>
-              <li>+1 (555) 123-4567</li>
+              <li className="flex items-center">
+                <Mail size={16} className="mr-2 text-hustle-accent" />
+                <a href="mailto:hustledigi@gmail.com" className="hover:text-white transition-colors">
+                  hustledigi@gmail.com
+                </a>
+              </li>
+              <li className="flex items-center">
+                <Phone size={16} className="mr-2 text-hustle-accent" />
+                <span>+1 (555) 123-4567</span>
+              </li>
             </ul>
             <div className="mt-4">
               <Link 

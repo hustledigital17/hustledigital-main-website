@@ -75,7 +75,7 @@ const Privacy = () => {
               If you have any questions about this privacy policy or our privacy practices, please contact us at:
             </p>
             <p className="my-4">
-              <strong>Email:</strong> privacy@hustledigital.com<br />
+              <strong>Email:</strong> <a href="mailto:hustledigi@gmail.com" className="text-hustle-accent hover:underline">hustledigi@gmail.com</a><br />
               <strong>Phone:</strong> +1 (555) 123-4567<br />
               <strong>Address:</strong> 123 Marketing Street, Digital City, DC 10101, United States
             </p>

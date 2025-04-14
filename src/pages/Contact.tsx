@@ -20,7 +20,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 import SectionHeader from "@/components/shared/SectionHeader";
 import CTAButton from "@/components/shared/CTAButton";
 import * as z from "zod";
@@ -116,8 +116,11 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-1">Email Us</h3>
-                    <p className="text-black">hello@hustledigital.com</p>
-                    <p className="text-black">support@hustledigital.com</p>
+                    <p className="text-black">
+                      <a href="mailto:hustledigi@gmail.com" className="hover:text-hustle-accent transition-colors">
+                        hustledigi@gmail.com
+                      </a>
+                    </p>
                   </div>
                 </div>
                 
@@ -128,7 +131,6 @@ const Contact = () => {
                   <div>
                     <h3 className="text-lg font-semibold mb-1">Call Us</h3>
                     <p className="text-black">+1 (555) 123-4567</p>
-                    <p className="text-black">+1 (555) 987-6543</p>
                   </div>
                 </div>
                 
@@ -160,7 +162,25 @@ const Contact = () => {
                 </div>
               </div>
               
-              <div className="mt-12 opacity-0 animate-fade-in animate-delay-500">
+              <div className="mt-10 opacity-0 animate-fade-in animate-delay-500">
+                <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
+                <div className="flex space-x-4">
+                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="p-2 bg-hustle-accent/10 rounded-full text-hustle-accent hover:bg-hustle-accent hover:text-white transition-colors">
+                    <Facebook size={20} />
+                  </a>
+                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="p-2 bg-hustle-accent/10 rounded-full text-hustle-accent hover:bg-hustle-accent hover:text-white transition-colors">
+                    <Twitter size={20} />
+                  </a>
+                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-2 bg-hustle-accent/10 rounded-full text-hustle-accent hover:bg-hustle-accent hover:text-white transition-colors">
+                    <Instagram size={20} />
+                  </a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-2 bg-hustle-accent/10 rounded-full text-hustle-accent hover:bg-hustle-accent hover:text-white transition-colors">
+                    <Linkedin size={20} />
+                  </a>
+                </div>
+              </div>
+              
+              <div className="mt-10 opacity-0 animate-fade-in animate-delay-500">
                 <h3 className="text-xl font-semibold mb-4">Quick Actions</h3>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <CTAButton 

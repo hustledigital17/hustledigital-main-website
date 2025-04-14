@@ -151,7 +151,7 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Testimonials Section - NEW */}
+      {/* Testimonials Section */}
       <section className="py-20 bg-hustle-muted">
         <div className="container mx-auto px-4 md:px-6">
           <SectionHeader
@@ -222,7 +222,36 @@ const Index = () => {
         </div>
       </section>
       
-      {/* FAQ Section - NEW */}
+      {/* CTA Section */}
+      <section className="py-20 bg-black text-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 opacity-0 animate-fade-in">
+              Ready to Transform Your Digital Presence?
+            </h2>
+            <p className="text-lg mb-8 text-gray-300 opacity-0 animate-fade-in animate-delay-100">
+              Get a free consultation and discover opportunities to improve your online performance.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fade-in animate-delay-200">
+              <CTAButton 
+                text="Book a Free Consultation" 
+                to="/contact"
+                variant="white"
+                size="lg"
+              />
+              <CTAButton 
+                text="Explore Our Services" 
+                to="/services"
+                variant="outline"
+                size="lg"
+                className="text-white"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* FAQ Section - MOVED below CTA */}
       <section className="py-20" id="faq-section">
         <div className="container mx-auto px-4 md:px-6">
           <SectionHeader
@@ -268,35 +297,6 @@ const Index = () => {
                 to="/faq"
                 variant="outline"
                 className="mx-auto"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* CTA Section */}
-      <section className="py-20 bg-black text-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 opacity-0 animate-fade-in">
-              Ready to Transform Your Digital Presence?
-            </h2>
-            <p className="text-lg mb-8 text-gray-300 opacity-0 animate-fade-in animate-delay-100">
-              Get a free consultation and discover opportunities to improve your online performance.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fade-in animate-delay-200">
-              <CTAButton 
-                text="Book a Free Consultation" 
-                to="/contact"
-                variant="white"
-                size="lg"
-              />
-              <CTAButton 
-                text="Explore Our Services" 
-                to="/services"
-                variant="outline"
-                size="lg"
-                className="text-white"
               />
             </div>
           </div>

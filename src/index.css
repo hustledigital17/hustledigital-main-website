@@ -23,7 +23,7 @@
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 53%;
 
-    --accent: 210 100% 45%; /* Apple blue accent */
+    --accent: 290 86% 56%; /* Updated to match #c130ef */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -31,7 +31,7 @@
 
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 210 100% 45%;
+    --ring: 290 86% 56%; /* Updated to match #c130ef */
 
     --radius: 0.5rem;
   }
@@ -55,7 +55,7 @@
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 210 100% 45%;
+    --accent: 290 86% 56%; /* Updated to match #c130ef */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
@@ -63,7 +63,7 @@
 
     --border: 0 0% 15%;
     --input: 0 0% 15%;
-    --ring: 210 100% 45%;
+    --ring: 290 86% 56%; /* Updated to match #c130ef */
   }
 }
 
