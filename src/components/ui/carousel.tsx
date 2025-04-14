@@ -1,3 +1,4 @@
+
 import * as React from "react"
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
@@ -17,6 +18,8 @@ type CarouselProps = {
   plugins?: CarouselPlugin
   orientation?: "horizontal" | "vertical"
   setApi?: (api: CarouselApi) => void
+  onMouseEnter?: () => void
+  onMouseLeave?: () => void
 }
 
 type CarouselContextProps = {
@@ -52,6 +55,8 @@ const Carousel = React.forwardRef<
       plugins,
       className,
       children,
+      onMouseEnter,
+      onMouseLeave,
       ...props
     },
     ref
@@ -130,6 +135,8 @@ const Carousel = React.forwardRef<
           scrollNext,
           canScrollPrev,
           canScrollNext,
+          onMouseEnter,
+          onMouseLeave
         }}
       >
         <div
@@ -138,6 +145,8 @@ const Carousel = React.forwardRef<
           className={cn("relative", className)}
           role="region"
           aria-roledescription="carousel"
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
           {...props}
         >
           {children}

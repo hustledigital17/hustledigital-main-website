@@ -1,4 +1,3 @@
-
 import { 
   Laptop, 
   ShieldCheck, 
@@ -18,6 +17,9 @@ import SectionHeader from "@/components/shared/SectionHeader";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
 import BusinessAnalyticsImage from "@/components/shared/BusinessAnalyticsImage";
+import ServicesCarousel from "@/components/shared/ServicesCarousel";
+import WhyChooseUsCard from "@/components/shared/WhyChooseUsCard";
+import TestimonialCard from "@/components/shared/TestimonialCard";
 
 const Index = () => {
   return (
@@ -69,42 +71,42 @@ const Index = () => {
           />
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-sm opacity-0 animate-fade-in">
-              <div className="w-12 h-12 bg-hustle-accent/10 rounded-full flex items-center justify-center mb-4">
-                <ShieldCheck className="text-hustle-accent" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Proven Expertise</h3>
-              <p className="text-black">Years of experience delivering successful digital marketing campaigns.</p>
-            </div>
+            <WhyChooseUsCard
+              title="Proven Expertise"
+              description="Years of experience delivering successful digital marketing campaigns."
+              icon={<ShieldCheck className="text-hustle-accent" />}
+              number="1"
+              delay=""
+            />
             
-            <div className="bg-white p-6 rounded-lg shadow-sm opacity-0 animate-fade-in animate-delay-100">
-              <div className="w-12 h-12 bg-hustle-accent/10 rounded-full flex items-center justify-center mb-4">
-                <TrendingUp className="text-hustle-accent" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Data-Driven</h3>
-              <p className="text-black">Strategic decisions backed by analytics and performance metrics.</p>
-            </div>
+            <WhyChooseUsCard
+              title="Data-Driven"
+              description="Strategic decisions backed by analytics and performance metrics."
+              icon={<TrendingUp className="text-hustle-accent" />}
+              number="2"
+              delay="animate-delay-100"
+            />
             
-            <div className="bg-white p-6 rounded-lg shadow-sm opacity-0 animate-fade-in animate-delay-200">
-              <div className="w-12 h-12 bg-hustle-accent/10 rounded-full flex items-center justify-center mb-4">
-                <DollarSign className="text-hustle-accent" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">ROI Focused</h3>
-              <p className="text-black">Campaigns designed to maximize your return on investment.</p>
-            </div>
+            <WhyChooseUsCard
+              title="ROI Focused"
+              description="Campaigns designed to maximize your return on investment."
+              icon={<DollarSign className="text-hustle-accent" />}
+              number="3"
+              delay="animate-delay-200"
+            />
             
-            <div className="bg-white p-6 rounded-lg shadow-sm opacity-0 animate-fade-in animate-delay-300">
-              <div className="w-12 h-12 bg-hustle-accent/10 rounded-full flex items-center justify-center mb-4">
-                <Users className="text-hustle-accent" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Client Success</h3>
-              <p className="text-black">Dedicated support team committed to your business goals.</p>
-            </div>
+            <WhyChooseUsCard
+              title="Client Success"
+              description="Dedicated support team committed to your business goals."
+              icon={<Users className="text-hustle-accent" />}
+              number="4"
+              delay="animate-delay-300"
+            />
           </div>
         </div>
       </section>
       
-      {/* Featured Services */}
+      {/* Featured Services - Now using carousel */}
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-6">
           <SectionHeader
@@ -114,27 +116,7 @@ const Index = () => {
             center={true}
           />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <ServiceCard 
-              title="Full Stack Website Development"
-              description="Custom websites designed for performance, conversions, and exceptional user experience."
-              icon={<Laptop size={28} />}
-            />
-            
-            <ServiceCard 
-              title="Social Media Marketing"
-              description="Strategic social media campaigns that build engagement and strengthen brand loyalty."
-              icon={<Users size={28} />}
-              delay="animate-delay-200"
-            />
-            
-            <ServiceCard 
-              title="Business Strategy Consulting"
-              description="Expert guidance to align your digital efforts with your business objectives."
-              icon={<TrendingUp size={28} />}
-              delay="animate-delay-300"
-            />
-          </div>
+          <ServicesCarousel />
           
           <div className="mt-12 text-center opacity-0 animate-fade-in animate-delay-400">
             <CTAButton 
@@ -147,7 +129,7 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Testimonials Section */}
+      {/* Testimonials Section - Now with images */}
       <section className="py-20 bg-hustle-muted">
         <div className="container mx-auto px-4 md:px-6">
           <SectionHeader
@@ -158,62 +140,29 @@ const Index = () => {
           />
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            {/* Testimonial 1 */}
-            <div className="bg-white p-8 rounded-lg shadow-md opacity-0 animate-fade-in hover:shadow-lg transition-all duration-300">
-              <div className="flex mb-4">
-                {[1, 2, 3, 4, 5].map((_, i) => (
-                  <Star key={i} size={20} className="text-yellow-400 fill-yellow-400" />
-                ))}
-              </div>
-              <p className="text-black mb-6 italic">"Hustle Digital transformed our online presence completely. Their strategic approach to digital marketing helped us increase our conversion rates by 150% in just three months."</p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-hustle-accent/20 rounded-full flex items-center justify-center mr-4">
-                  <p className="font-bold text-hustle-accent">SM</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold">Sarah Mitchell</h4>
-                  <p className="text-black">CEO, TechStart Inc.</p>
-                </div>
-              </div>
-            </div>
+            <TestimonialCard
+              quote="Hustle Digital transformed our online presence completely. Their strategic approach to digital marketing helped us increase our conversion rates by 150% in just three months."
+              name="Sarah Mitchell"
+              title="CEO, TechStart Inc."
+              imgSrc="/lovable-uploads/testimonial-1.jpg"
+              delay=""
+            />
             
-            {/* Testimonial 2 */}
-            <div className="bg-white p-8 rounded-lg shadow-md opacity-0 animate-fade-in animate-delay-100 hover:shadow-lg transition-all duration-300">
-              <div className="flex mb-4">
-                {[1, 2, 3, 4, 5].map((_, i) => (
-                  <Star key={i} size={20} className="text-yellow-400 fill-yellow-400" />
-                ))}
-              </div>
-              <p className="text-black mb-6 italic">"Working with Hustle Digital has been a game-changer. Their team understood our brand's voice and created content that truly resonates with our audience. Our social media engagement is up by 200%."</p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-hustle-accent/20 rounded-full flex items-center justify-center mr-4">
-                  <p className="font-bold text-hustle-accent">JD</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold">James Davis</h4>
-                  <p className="text-black">Marketing Director, Retail Solutions</p>
-                </div>
-              </div>
-            </div>
+            <TestimonialCard
+              quote="Working with Hustle Digital has been a game-changer. Their team understood our brand's voice and created content that truly resonates with our audience. Our social media engagement is up by 200%."
+              name="James Davis"
+              title="Marketing Director, Retail Solutions"
+              imgSrc="/lovable-uploads/testimonial-2.jpg"
+              delay="animate-delay-100"
+            />
             
-            {/* Testimonial 3 */}
-            <div className="bg-white p-8 rounded-lg shadow-md opacity-0 animate-fade-in animate-delay-200 hover:shadow-lg transition-all duration-300">
-              <div className="flex mb-4">
-                {[1, 2, 3, 4, 5].map((_, i) => (
-                  <Star key={i} size={20} className="text-yellow-400 fill-yellow-400" />
-                ))}
-              </div>
-              <p className="text-black mb-6 italic">"The website Hustle Digital built for us not only looks fantastic but performs incredibly well. Our load times decreased by 70%, and our bounce rate dropped significantly. The ROI has been incredible."</p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-hustle-accent/20 rounded-full flex items-center justify-center mr-4">
-                  <p className="font-bold text-hustle-accent">AP</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold">Alicia Parker</h4>
-                  <p className="text-black">Founder, Bloom Boutique</p>
-                </div>
-              </div>
-            </div>
+            <TestimonialCard
+              quote="The website Hustle Digital built for us not only looks fantastic but performs incredibly well. Our load times decreased by 70%, and our bounce rate dropped significantly. The ROI has been incredible."
+              name="Alicia Parker"
+              title="Founder, Bloom Boutique"
+              imgSrc="/lovable-uploads/testimonial-3.jpg"
+              delay="animate-delay-200"
+            />
           </div>
         </div>
       </section>
@@ -247,7 +196,7 @@ const Index = () => {
         </div>
       </section>
       
-      {/* FAQ Section - Now positioned below CTA */}
+      {/* FAQ Section - Positioned below CTA */}
       <section className="py-20" id="faq-section">
         <div className="container mx-auto px-4 md:px-6">
           <SectionHeader

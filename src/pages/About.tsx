@@ -1,13 +1,12 @@
-
 import SectionHeader from "@/components/shared/SectionHeader";
 import CTAButton from "@/components/shared/CTAButton";
 import { Award, Target, Users, Zap } from "lucide-react";
 
 const About = () => {
   return (
-    <div className="pt-20 pb-16 min-h-screen">
+    <div className="pb-0 min-h-screen">
       {/* Hero Section */}
-      <section className="py-16 md:py-20">
+      <section className="py-16 md:py-20 pt-28">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row gap-16 items-center">
             <div className="w-full md:w-1/2">
@@ -179,8 +178,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-black text-white">
+      {/* CTA Section - Modified to remove whitespace */}
+      <section className="py-16 bg-black text-white mb-0">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 opacity-0 animate-fade-in">
