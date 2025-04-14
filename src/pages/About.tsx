@@ -30,14 +30,14 @@ const About = () => {
               </div>
             </div>
             <div className="w-full md:w-1/2 relative opacity-0 animate-fade-in animate-delay-300">
-              <div className="aspect-video rounded-xl overflow-hidden">
+              <div className="aspect-video rounded-xl overflow-hidden transform transition-all duration-700 hover:scale-105 hover:shadow-xl hover:shadow-hustle-accent/20">
                 <img 
-                  src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" 
-                  alt="Hustle Digital Team" 
+                  src="/lovable-uploads/c44718e1-3483-4794-9e45-34eca77c194d.png" 
+                  alt="Business Analytics Chart"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-hustle-accent text-white p-4 rounded-lg shadow-lg md:max-w-xs">
+              <div className="absolute -bottom-6 -right-6 bg-hustle-accent text-white p-4 rounded-lg shadow-lg md:max-w-xs transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
                 <p className="font-medium">
                   "We don't just execute marketing campaigns; we build digital ecosystems that drive sustainable growth."
                 </p>
@@ -58,45 +58,33 @@ const About = () => {
           />
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-            <div className="bg-white p-8 rounded-lg shadow-sm opacity-0 animate-fade-in">
-              <div className="w-12 h-12 bg-hustle-accent/10 rounded-full flex items-center justify-center mb-4">
-                <Zap className="text-hustle-accent" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Innovation</h3>
-              <p className="text-hustle-light">
-                We continuously explore new technologies and strategies to keep our clients ahead of the curve.
-              </p>
-            </div>
+            <ValueCard 
+              icon={<Zap className="text-hustle-accent" />}
+              title="Innovation"
+              description="We continuously explore new technologies and strategies to keep our clients ahead of the curve."
+              delay={0}
+            />
             
-            <div className="bg-white p-8 rounded-lg shadow-sm opacity-0 animate-fade-in animate-delay-100">
-              <div className="w-12 h-12 bg-hustle-accent/10 rounded-full flex items-center justify-center mb-4">
-                <Target className="text-hustle-accent" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Results-Focused</h3>
-              <p className="text-hustle-light">
-                Every strategy we implement is designed with clear objectives and measurable outcomes.
-              </p>
-            </div>
+            <ValueCard 
+              icon={<Target className="text-hustle-accent" />}
+              title="Results-Focused"
+              description="Every strategy we implement is designed with clear objectives and measurable outcomes."
+              delay={100}
+            />
             
-            <div className="bg-white p-8 rounded-lg shadow-sm opacity-0 animate-fade-in animate-delay-200">
-              <div className="w-12 h-12 bg-hustle-accent/10 rounded-full flex items-center justify-center mb-4">
-                <Users className="text-hustle-accent" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Partnership</h3>
-              <p className="text-hustle-light">
-                We believe in building collaborative relationships with our clients that go beyond just service delivery.
-              </p>
-            </div>
+            <ValueCard 
+              icon={<Users className="text-hustle-accent" />}
+              title="Partnership"
+              description="We believe in building collaborative relationships with our clients that go beyond just service delivery."
+              delay={200}
+            />
             
-            <div className="bg-white p-8 rounded-lg shadow-sm opacity-0 animate-fade-in animate-delay-300">
-              <div className="w-12 h-12 bg-hustle-accent/10 rounded-full flex items-center justify-center mb-4">
-                <Award className="text-hustle-accent" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Excellence</h3>
-              <p className="text-hustle-light">
-                We hold ourselves to the highest standards in every aspect of our work.
-              </p>
-            </div>
+            <ValueCard 
+              icon={<Award className="text-hustle-accent" />}
+              title="Excellence"
+              description="We hold ourselves to the highest standards in every aspect of our work."
+              delay={300}
+            />
           </div>
         </div>
       </section>
@@ -128,36 +116,64 @@ const About = () => {
             </div>
             
             <div className="w-full lg:w-1/2 opacity-0 animate-fade-in animate-delay-300">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="aspect-square rounded-lg overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" 
-                    alt="Digital Marketing" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="aspect-square rounded-lg overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6" 
-                    alt="Web Development" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="aspect-square rounded-lg overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
-                    alt="Social Media Strategy" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="aspect-square rounded-lg overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" 
-                    alt="Content Creation" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+              <div className="rounded-lg overflow-hidden shadow-xl transform transition-all duration-700 hover:scale-105 hover:shadow-hustle-accent/30">
+                <img 
+                  src="/lovable-uploads/a01c26e3-eb4c-41b0-a94f-631d18c06121.png" 
+                  alt="Data Analysis and Growth" 
+                  className="w-full h-full object-cover"
+                />
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-16 bg-hustle-muted">
+        <div className="container mx-auto px-4 md:px-6">
+          <SectionHeader
+            subtitle="Our Expertise"
+            title="Digital Analytics Specialists"
+            description="We leverage data-driven insights to transform your business performance."
+            center={true}
+          />
+          
+          <div className="mt-12 flex flex-col md:flex-row gap-8 items-center justify-center">
+            <div className="w-full md:w-1/2 lg:w-2/5 opacity-0 animate-fade-in animate-delay-200">
+              <div className="rounded-xl overflow-hidden shadow-lg transform transition-all duration-700 hover:scale-105 hover:shadow-hustle-accent/30">
+                <img 
+                  src="/lovable-uploads/b9a1d15f-fc22-474f-a937-f8f37ef302e7.png" 
+                  alt="Data Dashboard" 
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+            
+            <div className="w-full md:w-1/2 lg:w-2/5 space-y-6 opacity-0 animate-fade-in animate-delay-300">
+              <h3 className="text-2xl md:text-3xl font-semibold">Analytics That Drive Results</h3>
+              <p className="text-hustle-light">
+                Our team specializes in translating complex data into actionable business insights. We help you understand your audience behavior, optimize your marketing spend, and identify new growth opportunities.
+              </p>
+              <ul className="space-y-3 text-hustle-light">
+                <li className="flex items-start">
+                  <div className="w-6 h-6 mr-2 rounded-full bg-hustle-accent/10 flex items-center justify-center">
+                    <span className="text-hustle-accent font-bold">✓</span>
+                  </div>
+                  <span>Comprehensive campaign tracking and analysis</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-6 h-6 mr-2 rounded-full bg-hustle-accent/10 flex items-center justify-center">
+                    <span className="text-hustle-accent font-bold">✓</span>
+                  </div>
+                  <span>Custom dashboard development for real-time monitoring</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-6 h-6 mr-2 rounded-full bg-hustle-accent/10 flex items-center justify-center">
+                    <span className="text-hustle-accent font-bold">✓</span>
+                  </div>
+                  <span>Data-driven strategy adjustments for maximum ROI</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -191,6 +207,21 @@ const About = () => {
           </div>
         </div>
       </section>
+    </div>
+  );
+};
+
+// Value Card Component for the Values section
+const ValueCard = ({ icon, title, description, delay = 0 }) => {
+  return (
+    <div className={`bg-white p-8 rounded-lg shadow-sm opacity-0 animate-fade-in animate-delay-${delay} transform transition-all duration-500 hover:shadow-lg hover:shadow-hustle-accent/10 hover:-translate-y-1`}>
+      <div className="w-12 h-12 bg-hustle-accent/10 rounded-full flex items-center justify-center mb-4 transform transition-all duration-300 hover:scale-110 hover:bg-hustle-accent/20">
+        {icon}
+      </div>
+      <h3 className="text-xl font-semibold mb-3">{title}</h3>
+      <p className="text-hustle-light">
+        {description}
+      </p>
     </div>
   );
 };
