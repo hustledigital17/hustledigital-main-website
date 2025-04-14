@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +23,15 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  // Add body class to prevent scrolling when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+  }, [isOpen]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -64,62 +74,107 @@ const Navbar = () => {
             <Link to="/contact" className="text-sm font-medium hover:text-hustle-accent transition-colors" onClick={handleLinkClick}>
               Contact
             </Link>
-            <Button asChild size="sm" className="bg-hustle-accent hover:bg-hustle-accent/90">
+            <Button asChild size="sm" className="bg-hustle-accent hover:bg-hustle-accent/90 shadow-sm hover:shadow-md transition-all">
               <Link to="/contact" onClick={handleLinkClick}>Book Appointment</Link>
             </Button>
           </nav>
 
           {/* Mobile Menu Toggle */}
           <button 
-            className="md:hidden p-2 focus:outline-none" 
+            className="md:hidden p-2 focus:outline-none relative z-50" 
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            <AnimatePresence mode="wait">
+              {isOpen ? (
+                <motion.div
+                  key="close"
+                  initial={{ opacity: 0, rotate: -90 }}
+                  animate={{ opacity: 1, rotate: 0 }}
+                  exit={{ opacity: 0, rotate: 90 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <X size={24} />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="menu"
+                  initial={{ opacity: 0, rotate: 90 }}
+                  animate={{ opacity: 1, rotate: 0 }}
+                  exit={{ opacity: 0, rotate: -90 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Menu size={24} />
+                </motion.div>
+              )}
+            </AnimatePresence>
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-white">
-          <div className="pt-2 pb-4 px-4 space-y-1">
-            <Link 
-              to="/" 
-              className="block py-3 text-base font-medium border-b border-gray-100"
-              onClick={handleLinkClick}
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            {/* Backdrop blur */}
+            <motion.div 
+              className="fixed inset-0 bg-black/30 backdrop-blur-md z-40 md:hidden"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              onClick={closeMenu}
+            />
+            
+            {/* Menu content */}
+            <motion.div 
+              className="fixed inset-y-0 right-0 w-full max-w-xs bg-white shadow-xl z-40 md:hidden flex flex-col"
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
             >
-              Home
-            </Link>
-            <Link 
-              to="/about" 
-              className="block py-3 text-base font-medium border-b border-gray-100"
-              onClick={handleLinkClick}
-            >
-              About
-            </Link>
-            <Link 
-              to="/services" 
-              className="block py-3 text-base font-medium border-b border-gray-100"
-              onClick={handleLinkClick}
-            >
-              Services
-            </Link>
-            <Link 
-              to="/contact" 
-              className="block py-3 text-base font-medium"
-              onClick={handleLinkClick}
-            >
-              Contact
-            </Link>
-            <div className="pt-4">
-              <Button asChild className="w-full bg-hustle-accent hover:bg-hustle-accent/90">
-                <Link to="/contact" onClick={handleLinkClick}>Book Appointment</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      )}
+              <div className="flex-1 overflow-y-auto py-20 px-6">
+                <div className="flex flex-col space-y-6">
+                  <Link 
+                    to="/" 
+                    className="text-lg font-medium border-b border-gray-100 pb-4"
+                    onClick={handleLinkClick}
+                  >
+                    Home
+                  </Link>
+                  <Link 
+                    to="/about" 
+                    className="text-lg font-medium border-b border-gray-100 pb-4"
+                    onClick={handleLinkClick}
+                  >
+                    About
+                  </Link>
+                  <Link 
+                    to="/services" 
+                    className="text-lg font-medium border-b border-gray-100 pb-4"
+                    onClick={handleLinkClick}
+                  >
+                    Services
+                  </Link>
+                  <Link 
+                    to="/contact" 
+                    className="text-lg font-medium border-b border-gray-100 pb-4"
+                    onClick={handleLinkClick}
+                  >
+                    Contact
+                  </Link>
+                  <div className="pt-4">
+                    <Button asChild className="w-full bg-hustle-accent hover:bg-hustle-accent/90 shadow-sm">
+                      <Link to="/contact" onClick={handleLinkClick}>Book Appointment</Link>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </header>
   );
 };

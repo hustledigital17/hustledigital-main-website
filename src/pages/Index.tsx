@@ -1,3 +1,4 @@
+
 import { 
   Laptop, 
   ShieldCheck, 
@@ -20,6 +21,7 @@ import BusinessAnalyticsImage from "@/components/shared/BusinessAnalyticsImage";
 import ServicesCarousel from "@/components/shared/ServicesCarousel";
 import WhyChooseUsCard from "@/components/shared/WhyChooseUsCard";
 import TestimonialCard from "@/components/shared/TestimonialCard";
+import { motion } from "framer-motion";
 
 const Index = () => {
   return (
@@ -29,16 +31,31 @@ const Index = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row items-center">
             <div className="w-full md:w-1/2 mb-12 md:mb-0 space-y-6">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight opacity-0 animate-fade-in">
+              <motion.h1 
+                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+              >
                 Digital Marketing<br />
                 <span className="text-hustle-accent">Crafted for Results</span>
-              </h1>
+              </motion.h1>
               
-              <p className="text-xl md:text-2xl text-black opacity-0 animate-fade-in animate-delay-200">
+              <motion.p 
+                className="text-xl md:text-2xl text-black"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+              >
                 Transform your digital presence with strategies that drive growth and deliver measurable success.
-              </p>
+              </motion.p>
               
-              <div className="flex flex-col sm:flex-row gap-4 pt-4 opacity-0 animate-fade-in animate-delay-300">
+              <motion.div 
+                className="flex flex-col sm:flex-row gap-4 pt-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+              >
                 <CTAButton 
                   text="Book a Free Consultation" 
                   to="/contact"
@@ -50,12 +67,17 @@ const Index = () => {
                   variant="outline"
                   size="lg"
                 />
-              </div>
+              </motion.div>
             </div>
             
-            <div className="w-full md:w-1/2 opacity-0 animate-fade-in animate-delay-200">
+            <motion.div 
+              className="w-full md:w-1/2"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               <BusinessAnalyticsImage />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -73,33 +95,37 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <WhyChooseUsCard
               title="Proven Expertise"
-              description="Years of experience delivering successful digital marketing campaigns."
+              description="Years of experience delivering successful digital marketing campaigns across multiple industries."
               icon={<ShieldCheck className="text-hustle-accent" />}
               number="1"
+              stats="10+ Years Experience"
               delay=""
             />
             
             <WhyChooseUsCard
               title="Data-Driven"
-              description="Strategic decisions backed by analytics and performance metrics."
+              description="Strategic decisions backed by analytics and performance metrics to ensure optimal results."
               icon={<TrendingUp className="text-hustle-accent" />}
               number="2"
+              stats="237% Average ROI"
               delay="animate-delay-100"
             />
             
             <WhyChooseUsCard
               title="ROI Focused"
-              description="Campaigns designed to maximize your return on investment."
+              description="Campaigns designed to maximize your return on investment and deliver tangible business growth."
               icon={<DollarSign className="text-hustle-accent" />}
               number="3"
+              stats="$4.2M+ Revenue Generated"
               delay="animate-delay-200"
             />
             
             <WhyChooseUsCard
               title="Client Success"
-              description="Dedicated support team committed to your business goals."
+              description="Dedicated support team committed to your business goals and long-term success."
               icon={<Users className="text-hustle-accent" />}
               number="4"
+              stats="98% Client Retention"
               delay="animate-delay-300"
             />
           </div>
@@ -171,13 +197,31 @@ const Index = () => {
       <section className="py-20 bg-black text-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 opacity-0 animate-fade-in">
+            <motion.h2 
+              className="text-3xl md:text-4xl font-bold mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
               Ready to Transform Your Digital Presence?
-            </h2>
-            <p className="text-lg mb-8 text-gray-300 opacity-0 animate-fade-in animate-delay-100">
+            </motion.h2>
+            <motion.p 
+              className="text-lg mb-8 text-gray-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
               Get a free consultation and discover opportunities to improve your online performance.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fade-in animate-delay-200">
+            </motion.p>
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               <CTAButton 
                 text="Book a Free Consultation" 
                 to="/contact"
@@ -191,7 +235,7 @@ const Index = () => {
                 size="lg"
                 className="text-white"
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
