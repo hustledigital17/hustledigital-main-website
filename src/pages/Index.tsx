@@ -1,8 +1,22 @@
 
-import { Laptop, ShieldCheck, TrendingUp, DollarSign, Users } from "lucide-react";
+import { 
+  Laptop, 
+  ShieldCheck, 
+  TrendingUp, 
+  DollarSign, 
+  Users, 
+  MonitorSmartphone, 
+  Award, 
+  Star,
+  ChevronDown,
+  ChevronRight,
+  MessageSquare
+} from "lucide-react";
 import CTAButton from "@/components/shared/CTAButton";
 import ServiceCard from "@/components/shared/ServiceCard";
 import SectionHeader from "@/components/shared/SectionHeader";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
@@ -17,13 +31,13 @@ const Index = () => {
                 <span className="text-hustle-accent">Crafted for Results</span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-hustle-light opacity-0 animate-fade-in animate-delay-200">
+              <p className="text-xl md:text-2xl text-black opacity-0 animate-fade-in animate-delay-200">
                 Transform your digital presence with strategies that drive growth and deliver measurable success.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 pt-4 opacity-0 animate-fade-in animate-delay-300">
                 <CTAButton 
-                  text="Book an Appointment" 
+                  text="Book a Free Consultation" 
                   to="/contact"
                   size="lg"
                 />
@@ -37,13 +51,11 @@ const Index = () => {
             </div>
             
             <div className="w-full md:w-1/2 opacity-0 animate-fade-in animate-delay-200">
-              <div className="relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" 
-                  alt="Digital Marketing Professionals" 
-                  className="rounded-xl shadow-2xl"
-                />
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-hustle-accent/20 to-transparent"></div>
+              <div className="relative flex justify-center items-center p-10">
+                <div className="absolute w-64 h-64 bg-hustle-accent/10 rounded-full"></div>
+                <div className="relative z-10 transform transition-all duration-500 hover:scale-110">
+                  <MonitorSmartphone size={240} className="text-hustle-accent" />
+                </div>
               </div>
             </div>
           </div>
@@ -66,7 +78,7 @@ const Index = () => {
                 <ShieldCheck className="text-hustle-accent" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Proven Expertise</h3>
-              <p className="text-hustle-light">Years of experience delivering successful digital marketing campaigns.</p>
+              <p className="text-black">Years of experience delivering successful digital marketing campaigns.</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm opacity-0 animate-fade-in animate-delay-100">
@@ -74,7 +86,7 @@ const Index = () => {
                 <TrendingUp className="text-hustle-accent" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Data-Driven</h3>
-              <p className="text-hustle-light">Strategic decisions backed by analytics and performance metrics.</p>
+              <p className="text-black">Strategic decisions backed by analytics and performance metrics.</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm opacity-0 animate-fade-in animate-delay-200">
@@ -82,7 +94,7 @@ const Index = () => {
                 <DollarSign className="text-hustle-accent" />
               </div>
               <h3 className="text-xl font-semibold mb-2">ROI Focused</h3>
-              <p className="text-hustle-light">Campaigns designed to maximize your return on investment.</p>
+              <p className="text-black">Campaigns designed to maximize your return on investment.</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm opacity-0 animate-fade-in animate-delay-300">
@@ -90,7 +102,7 @@ const Index = () => {
                 <Users className="text-hustle-accent" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Client Success</h3>
-              <p className="text-hustle-light">Dedicated support team committed to your business goals.</p>
+              <p className="text-black">Dedicated support team committed to your business goals.</p>
             </div>
           </div>
         </div>
@@ -139,6 +151,129 @@ const Index = () => {
         </div>
       </section>
       
+      {/* Testimonials Section - NEW */}
+      <section className="py-20 bg-hustle-muted">
+        <div className="container mx-auto px-4 md:px-6">
+          <SectionHeader
+            subtitle="Client Testimonials"
+            title="What Our Clients Say"
+            description="Don't just take our word for it. Here's what our clients have to say about working with Hustle Digital."
+            center={true}
+          />
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            {/* Testimonial 1 */}
+            <div className="bg-white p-8 rounded-lg shadow-md opacity-0 animate-fade-in hover:shadow-lg transition-all duration-300">
+              <div className="flex mb-4">
+                {[1, 2, 3, 4, 5].map((_, i) => (
+                  <Star key={i} size={20} className="text-yellow-400 fill-yellow-400" />
+                ))}
+              </div>
+              <p className="text-black mb-6 italic">"Hustle Digital transformed our online presence completely. Their strategic approach to digital marketing helped us increase our conversion rates by 150% in just three months."</p>
+              <div className="flex items-center">
+                <div className="w-12 h-12 bg-hustle-accent/20 rounded-full flex items-center justify-center mr-4">
+                  <p className="font-bold text-hustle-accent">SM</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold">Sarah Mitchell</h4>
+                  <p className="text-black">CEO, TechStart Inc.</p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Testimonial 2 */}
+            <div className="bg-white p-8 rounded-lg shadow-md opacity-0 animate-fade-in animate-delay-100 hover:shadow-lg transition-all duration-300">
+              <div className="flex mb-4">
+                {[1, 2, 3, 4, 5].map((_, i) => (
+                  <Star key={i} size={20} className="text-yellow-400 fill-yellow-400" />
+                ))}
+              </div>
+              <p className="text-black mb-6 italic">"Working with Hustle Digital has been a game-changer. Their team understood our brand's voice and created content that truly resonates with our audience. Our social media engagement is up by 200%."</p>
+              <div className="flex items-center">
+                <div className="w-12 h-12 bg-hustle-accent/20 rounded-full flex items-center justify-center mr-4">
+                  <p className="font-bold text-hustle-accent">JD</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold">James Davis</h4>
+                  <p className="text-black">Marketing Director, Retail Solutions</p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Testimonial 3 */}
+            <div className="bg-white p-8 rounded-lg shadow-md opacity-0 animate-fade-in animate-delay-200 hover:shadow-lg transition-all duration-300">
+              <div className="flex mb-4">
+                {[1, 2, 3, 4, 5].map((_, i) => (
+                  <Star key={i} size={20} className="text-yellow-400 fill-yellow-400" />
+                ))}
+              </div>
+              <p className="text-black mb-6 italic">"The website Hustle Digital built for us not only looks fantastic but performs incredibly well. Our load times decreased by 70%, and our bounce rate dropped significantly. The ROI has been incredible."</p>
+              <div className="flex items-center">
+                <div className="w-12 h-12 bg-hustle-accent/20 rounded-full flex items-center justify-center mr-4">
+                  <p className="font-bold text-hustle-accent">AP</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold">Alicia Parker</h4>
+                  <p className="text-black">Founder, Bloom Boutique</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* FAQ Section - NEW */}
+      <section className="py-20" id="faq-section">
+        <div className="container mx-auto px-4 md:px-6">
+          <SectionHeader
+            subtitle="Frequently Asked Questions"
+            title="Got Questions? We've Got Answers"
+            description="Here are some common questions we receive from our clients. If you can't find what you're looking for, don't hesitate to reach out."
+            center={true}
+          />
+          
+          <div className="max-w-3xl mx-auto mt-12 opacity-0 animate-fade-in">
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger className="text-left text-lg font-medium">
+                  What makes Hustle Digital different from other agencies?
+                </AccordionTrigger>
+                <AccordionContent className="text-black">
+                  Unlike traditional agencies, we focus on measurable results and ROI. We combine data-driven strategies with creative execution to ensure your marketing budget delivers real business growth. Our team stays at the forefront of digital trends, ensuring your brand is always ahead of the curve.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-2">
+                <AccordionTrigger className="text-left text-lg font-medium">
+                  How long does it take to see results from digital marketing?
+                </AccordionTrigger>
+                <AccordionContent className="text-black">
+                  While some tactics like paid advertising can show immediate results, most digital marketing strategies take 3-6 months to gain significant traction. We focus on building sustainable growth rather than quick fixes, though we'll always identify quick wins in the early stages of our partnership.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-3">
+                <AccordionTrigger className="text-left text-lg font-medium">
+                  What's included in the free consultation?
+                </AccordionTrigger>
+                <AccordionContent className="text-black">
+                  Our free consultation includes a comprehensive review of your current digital presence, identification of key opportunities for growth, and a preliminary strategy discussion. We'll analyze your competitors, assess your market position, and outline potential strategies tailored to your business goals.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            
+            <div className="mt-10 text-center">
+              <CTAButton 
+                text="View All FAQs" 
+                to="/faq"
+                variant="outline"
+                className="mx-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      
       {/* CTA Section */}
       <section className="py-20 bg-black text-white">
         <div className="container mx-auto px-4 md:px-6">
@@ -147,18 +282,18 @@ const Index = () => {
               Ready to Transform Your Digital Presence?
             </h2>
             <p className="text-lg mb-8 text-gray-300 opacity-0 animate-fade-in animate-delay-100">
-              Get a free website audit and discover opportunities to improve your online performance.
+              Get a free consultation and discover opportunities to improve your online performance.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fade-in animate-delay-200">
               <CTAButton 
-                text="Book a Free Audit" 
+                text="Book a Free Consultation" 
                 to="/contact"
                 variant="white"
                 size="lg"
               />
               <CTAButton 
-                text="Schedule a Strategy Call" 
-                to="/contact"
+                text="Explore Our Services" 
+                to="/services"
                 variant="outline"
                 size="lg"
                 className="text-white"

@@ -42,8 +42,11 @@ const CTAButton = ({
   }
   
   const handleClick = () => {
-    // Scroll to top when link is clicked
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Scroll to top when link is clicked with smooth behavior
+    window.scrollTo({ 
+      top: 0, 
+      behavior: 'smooth' 
+    });
   };
   
   return (

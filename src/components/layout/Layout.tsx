@@ -11,9 +11,12 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   const location = useLocation();
 
-  // Scroll to top when the route changes
+  // Improved scroll to top with smooth behavior when the route changes
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   }, [location.pathname]);
 
   return (

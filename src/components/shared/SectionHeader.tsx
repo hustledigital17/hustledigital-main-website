@@ -27,7 +27,7 @@ const SectionHeader = ({
         {title}
       </h2>
       {description && (
-        <div className="text-hustle-light text-lg md:text-xl opacity-0 animate-fade-in animate-delay-200">
+        <div className="text-black text-lg md:text-xl opacity-0 animate-fade-in animate-delay-200">
           {description}
         </div>
       )}

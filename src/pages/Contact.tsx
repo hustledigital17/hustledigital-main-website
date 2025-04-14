@@ -90,7 +90,7 @@ const Contact = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6 opacity-0 animate-fade-in animate-delay-100">
               Let's Discuss Your Project
             </h1>
-            <p className="text-xl text-hustle-light mb-8 opacity-0 animate-fade-in animate-delay-200">
+            <p className="text-xl text-black mb-8 opacity-0 animate-fade-in animate-delay-200">
               Have questions or ready to start? Reach out to us and let's explore how we can help grow your business.
             </p>
           </div>
@@ -116,8 +116,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-1">Email Us</h3>
-                    <p className="text-hustle-light">hello@hustledigital.com</p>
-                    <p className="text-hustle-light">support@hustledigital.com</p>
+                    <p className="text-black">hello@hustledigital.com</p>
+                    <p className="text-black">support@hustledigital.com</p>
                   </div>
                 </div>
                 
@@ -127,8 +127,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-1">Call Us</h3>
-                    <p className="text-hustle-light">+1 (555) 123-4567</p>
-                    <p className="text-hustle-light">+1 (555) 987-6543</p>
+                    <p className="text-black">+1 (555) 123-4567</p>
+                    <p className="text-black">+1 (555) 987-6543</p>
                   </div>
                 </div>
                 
@@ -138,7 +138,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-1">Visit Us</h3>
-                    <p className="text-hustle-light">
+                    <p className="text-black">
                       123 Marketing Street<br />
                       Digital City, DC 10101<br />
                       United States
@@ -152,7 +152,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-1">Business Hours</h3>
-                    <p className="text-hustle-light">
+                    <p className="text-black">
                       Monday - Friday: 9:00 AM - 6:00 PM<br />
                       Saturday - Sunday: Closed
                     </p>
@@ -164,14 +164,9 @@ const Contact = () => {
                 <h3 className="text-xl font-semibold mb-4">Quick Actions</h3>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <CTAButton 
-                    text="Book a Free Audit" 
+                    text="Book a Free Consultation" 
                     to="#contact-form" 
                     variant="black"
-                  />
-                  <CTAButton 
-                    text="Schedule a Strategy Call" 
-                    to="#contact-form" 
-                    variant="outline"
                   />
                 </div>
               </div>
@@ -285,26 +280,6 @@ const Contact = () => {
                     </Button>
                   </form>
                 </Form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Map Section */}
-      <section className="py-16 bg-hustle-muted">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto">
-            <SectionHeader
-              title="Find Us"
-              description="Visit our office or schedule a virtual meeting - we're flexible and ready to assist you."
-              center={true}
-            />
-            
-            <div className="aspect-video mt-8 rounded-xl overflow-hidden shadow-lg opacity-0 animate-fade-in animate-delay-200">
-              {/* This would be a real map in a production website */}
-              <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                <p className="text-gray-500">Interactive Map Would Be Here</p>
               </div>
             </div>
           </div>

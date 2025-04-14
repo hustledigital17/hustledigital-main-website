@@ -19,7 +19,7 @@ const ServiceCard = ({ title, description, icon, delay = "animate-delay-100" }: 
         <CardTitle className="text-xl">{title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <CardDescription className="text-base mb-4">{description}</CardDescription>
+        <CardDescription className="text-base mb-4 text-black">{description}</CardDescription>
         <Link 
           to="/services" 
           className="inline-flex items-center text-sm font-medium text-hustle-accent group-hover:underline"
