@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -6,7 +5,6 @@ import { ButtonProps } from "@/components/ui/button";
 
 // Create a custom type for button variants
 type CTAVariant = "default" | "outline" | "black" | "white";
-
 interface CTAButtonProps {
   text: string;
   to: string;
@@ -15,18 +13,16 @@ interface CTAButtonProps {
   className?: string;
   size?: "default" | "sm" | "lg" | "icon";
 }
-
-const CTAButton = ({ 
-  text, 
-  to, 
-  icon = true, 
+const CTAButton = ({
+  text,
+  to,
+  icon = true,
   variant = "default",
   className,
   size = "default",
-  ...props 
+  ...props
 }: CTAButtonProps) => {
   let buttonClass = "";
-  
   switch (variant) {
     case "black":
       buttonClass = "bg-black text-white hover:bg-black/90";
@@ -40,28 +36,15 @@ const CTAButton = ({
     default:
       buttonClass = "bg-hustle-accent text-white hover:bg-hustle-accent/90";
   }
-  
   const handleClick = () => {
     // Scroll to top when link is clicked with smooth behavior
-    window.scrollTo({ 
-      top: 0, 
-      behavior: 'smooth' 
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
     });
   };
-  
-  return (
-    <Button 
-      asChild 
-      className={`rounded-md font-medium ${buttonClass} ${className || ""}`}
-      size={size}
-      {...props}
-    >
-      <Link to={to} className="inline-flex items-center" onClick={handleClick}>
-        {text}
-        {icon && <ArrowRight size={16} className="ml-2" />}
-      </Link>
-    </Button>
-  );
+  return <Button asChild className={`rounded-md font-medium ${buttonClass} ${className || ""}`} size={size} {...props}>
+      
+    </Button>;
 };
-
 export default CTAButton;

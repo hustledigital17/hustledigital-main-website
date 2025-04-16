@@ -151,26 +151,10 @@ const Contact = () => {
                 </div>
               </div>
               
-              <div className="mt-10 opacity-0 animate-fade-in animate-delay-500">
-                <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
-                <div className="flex space-x-4">
-                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="p-2 bg-hustle-accent/10 rounded-full text-hustle-accent hover:bg-hustle-accent hover:text-white transition-colors">
-                    <Facebook size={20} />
-                  </a>
-                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="p-2 bg-hustle-accent/10 rounded-full text-hustle-accent hover:bg-hustle-accent hover:text-white transition-colors">
-                    <Twitter size={20} />
-                  </a>
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-2 bg-hustle-accent/10 rounded-full text-hustle-accent hover:bg-hustle-accent hover:text-white transition-colors">
-                    <Instagram size={20} />
-                  </a>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-2 bg-hustle-accent/10 rounded-full text-hustle-accent hover:bg-hustle-accent hover:text-white transition-colors">
-                    <Linkedin size={20} />
-                  </a>
-                </div>
-              </div>
+              
               
               <div className="mt-10 opacity-0 animate-fade-in animate-delay-500">
-                <h3 className="text-xl font-semibold mb-4">Quick Actions</h3>
+                
                 <div className="flex flex-col sm:flex-row gap-4">
                   <CTAButton text="Book a Free Consultation" to="#contact-form" variant="black" />
                 </div>
