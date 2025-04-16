@@ -10,7 +10,8 @@ import {
   Star,
   ChevronDown,
   ChevronRight,
-  MessageSquare
+  MessageSquare,
+  Calendar
 } from "lucide-react";
 import CTAButton from "@/components/shared/CTAButton";
 import ServiceCard from "@/components/shared/ServiceCard";
@@ -22,15 +23,16 @@ import ServicesCarousel from "@/components/shared/ServicesCarousel";
 import WhyChooseUsCard from "@/components/shared/WhyChooseUsCard";
 import TestimonialCard from "@/components/shared/TestimonialCard";
 import { motion } from "framer-motion";
+import { Separator } from "@/components/ui/separator";
 
 const Index = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="pt-28 md:pt-36 pb-20 md:pb-28 relative overflow-hidden">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col md:flex-row items-center">
-            <div className="w-full md:w-1/2 mb-12 md:mb-0 space-y-6">
+      {/* Hero Section - Added more padding and spacing */}
+      <section className="pt-36 md:pt-44 pb-28 md:pb-36 relative overflow-hidden">
+        <div className="container mx-auto px-6 md:px-8">
+          <div className="flex flex-col md:flex-row items-center md:gap-12">
+            <div className="w-full md:w-1/2 mb-16 md:mb-0 space-y-8">
               <motion.h1 
                 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
                 initial={{ opacity: 0, y: 20 }}
@@ -42,7 +44,7 @@ const Index = () => {
               </motion.h1>
               
               <motion.p 
-                className="text-xl md:text-2xl text-black"
+                className="text-xl md:text-2xl text-black my-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
@@ -51,7 +53,7 @@ const Index = () => {
               </motion.p>
               
               <motion.div 
-                className="flex flex-col sm:flex-row gap-4 pt-4"
+                className="flex flex-col sm:flex-row gap-5 pt-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
@@ -60,6 +62,7 @@ const Index = () => {
                   text="Book a Free Consultation" 
                   to="/contact"
                   size="lg"
+                  icon={true}
                 />
                 <CTAButton 
                   text="Our Services" 
@@ -82,9 +85,9 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Why Choose Us */}
-      <section className="py-20 bg-hustle-muted">
-        <div className="container mx-auto px-4 md:px-6">
+      {/* Why Choose Us - Added more padding and spacing */}
+      <section className="py-28 bg-hustle-muted">
+        <div className="container mx-auto px-6 md:px-8">
           <SectionHeader
             subtitle="Why Choose Us"
             title="Digital Excellence, Measurable Results"
@@ -92,7 +95,7 @@ const Index = () => {
             center={true}
           />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mt-16">
             <WhyChooseUsCard
               title="Proven Expertise"
               description="Years of experience delivering successful digital marketing campaigns across multiple industries."
@@ -129,12 +132,22 @@ const Index = () => {
               delay="animate-delay-300"
             />
           </div>
+          
+          <div className="mt-16 text-center opacity-0 animate-fade-in animate-delay-400">
+            <CTAButton 
+              text="Book a Free Consultation" 
+              to="/contact"
+              size="lg"
+              className="mx-auto"
+              icon={true}
+            />
+          </div>
         </div>
       </section>
       
-      {/* Featured Services - Now using carousel */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 md:px-6">
+      {/* Featured Services - Added more padding and spacing */}
+      <section className="py-28">
+        <div className="container mx-auto px-6 md:px-8">
           <SectionHeader
             subtitle="Our Services"
             title="Strategic Digital Marketing Solutions"
@@ -142,22 +155,32 @@ const Index = () => {
             center={true}
           />
           
-          <ServicesCarousel />
+          <div className="mt-16">
+            <ServicesCarousel />
+          </div>
           
-          <div className="mt-12 text-center opacity-0 animate-fade-in animate-delay-400">
+          <div className="mt-16 text-center opacity-0 animate-fade-in animate-delay-400">
             <CTAButton 
               text="View All Services" 
               to="/services"
               size="lg"
-              className="mx-auto"
+              className="mx-auto mr-4 inline-block"
+            />
+            <CTAButton 
+              text="Book a Free Consultation" 
+              to="/contact"
+              variant="outline"
+              size="lg"
+              className="mx-auto ml-4 mt-4 sm:mt-0 inline-block"
+              icon={true}
             />
           </div>
         </div>
       </section>
       
-      {/* Testimonials Section - Now with images */}
-      <section className="py-20 bg-hustle-muted">
-        <div className="container mx-auto px-4 md:px-6">
+      {/* Testimonials Section - Updated with better spacing and new images */}
+      <section className="py-28 bg-hustle-muted">
+        <div className="container mx-auto px-6 md:px-8">
           <SectionHeader
             subtitle="Client Testimonials"
             title="What Our Clients Say"
@@ -165,12 +188,12 @@ const Index = () => {
             center={true}
           />
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16">
             <TestimonialCard
               quote="Hustle Digital transformed our online presence completely. Their strategic approach to digital marketing helped us increase our conversion rates by 150% in just three months."
               name="Sarah Mitchell"
               title="CEO, TechStart Inc."
-              imgSrc="/lovable-uploads/testimonial-1.jpg"
+              imgSrc="/lovable-uploads/04672ee9-38e1-4113-8c0c-bd7b684b833a.png"
               delay=""
             />
             
@@ -178,7 +201,7 @@ const Index = () => {
               quote="Working with Hustle Digital has been a game-changer. Their team understood our brand's voice and created content that truly resonates with our audience. Our social media engagement is up by 200%."
               name="James Davis"
               title="Marketing Director, Retail Solutions"
-              imgSrc="/lovable-uploads/testimonial-2.jpg"
+              imgSrc="/lovable-uploads/7fa6cf9e-4dea-4299-9009-758c8c52b8a1.png"
               delay="animate-delay-100"
             />
             
@@ -186,19 +209,29 @@ const Index = () => {
               quote="The website Hustle Digital built for us not only looks fantastic but performs incredibly well. Our load times decreased by 70%, and our bounce rate dropped significantly. The ROI has been incredible."
               name="Alicia Parker"
               title="Founder, Bloom Boutique"
-              imgSrc="/lovable-uploads/testimonial-3.jpg"
+              imgSrc="/lovable-uploads/95d19366-18a3-4410-91ac-2ce3073cc326.png"
               delay="animate-delay-200"
+            />
+          </div>
+          
+          <div className="mt-16 text-center opacity-0 animate-fade-in animate-delay-300">
+            <CTAButton 
+              text="Book a Free Consultation" 
+              to="/contact"
+              size="lg"
+              className="mx-auto"
+              icon={true}
             />
           </div>
         </div>
       </section>
       
-      {/* CTA Section */}
-      <section className="py-20 bg-black text-white">
-        <div className="container mx-auto px-4 md:px-6">
+      {/* CTA Section - Added more padding and a separator */}
+      <section className="py-28 bg-black text-white">
+        <div className="container mx-auto px-6 md:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <motion.h2 
-              className="text-3xl md:text-4xl font-bold mb-6"
+              className="text-3xl md:text-4xl font-bold mb-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -206,8 +239,11 @@ const Index = () => {
             >
               Ready to Transform Your Digital Presence?
             </motion.h2>
+            
+            <Separator className="bg-hustle-accent/30 h-[2px] w-24 mx-auto mb-8" />
+            
             <motion.p 
-              className="text-lg mb-8 text-gray-300"
+              className="text-xl mb-10 text-gray-300 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -216,7 +252,7 @@ const Index = () => {
               Get a free consultation and discover opportunities to improve your online performance.
             </motion.p>
             <motion.div 
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              className="flex flex-col sm:flex-row gap-6 justify-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -227,6 +263,7 @@ const Index = () => {
                 to="/contact"
                 variant="white"
                 size="lg"
+                icon={true}
               />
               <CTAButton 
                 text="Explore Our Services" 
@@ -240,9 +277,14 @@ const Index = () => {
         </div>
       </section>
       
-      {/* FAQ Section - Positioned below CTA */}
-      <section className="py-20" id="faq-section">
-        <div className="container mx-auto px-4 md:px-6">
+      {/* Added a section break with elegant spacing */}
+      <div className="py-12 bg-white">
+        <Separator className="w-24 mx-auto bg-hustle-accent/20 h-[2px]" />
+      </div>
+      
+      {/* FAQ Section - Increased spacing */}
+      <section className="py-28 bg-white" id="faq-section">
+        <div className="container mx-auto px-6 md:px-8">
           <SectionHeader
             subtitle="Frequently Asked Questions"
             title="Got Questions? We've Got Answers"
@@ -250,51 +292,58 @@ const Index = () => {
             center={true}
           />
           
-          <div className="max-w-3xl mx-auto mt-12 opacity-0 animate-fade-in">
-            <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="item-1">
+          <div className="max-w-3xl mx-auto mt-16 opacity-0 animate-fade-in">
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              <AccordionItem value="item-1" className="border border-gray-200 rounded-md px-6 py-2">
                 <AccordionTrigger className="text-left text-lg font-medium">
                   What makes Hustle Digital different from other agencies?
                 </AccordionTrigger>
-                <AccordionContent className="text-black">
+                <AccordionContent className="text-black text-base">
                   Unlike traditional agencies, we focus on measurable results and ROI. We combine data-driven strategies with creative execution to ensure your marketing budget delivers real business growth. Our team stays at the forefront of digital trends, ensuring your brand is always ahead of the curve.
                 </AccordionContent>
               </AccordionItem>
               
-              <AccordionItem value="item-2">
+              <AccordionItem value="item-2" className="border border-gray-200 rounded-md px-6 py-2">
                 <AccordionTrigger className="text-left text-lg font-medium">
                   How long does it take to see results from digital marketing?
                 </AccordionTrigger>
-                <AccordionContent className="text-black">
+                <AccordionContent className="text-black text-base">
                   While some tactics like paid advertising can show immediate results, most digital marketing strategies take 3-6 months to gain significant traction. We focus on building sustainable growth rather than quick fixes, though we'll always identify quick wins in the early stages of our partnership.
                 </AccordionContent>
               </AccordionItem>
               
-              <AccordionItem value="item-3">
+              <AccordionItem value="item-3" className="border border-gray-200 rounded-md px-6 py-2">
                 <AccordionTrigger className="text-left text-lg font-medium">
                   What's included in the free consultation?
                 </AccordionTrigger>
-                <AccordionContent className="text-black">
+                <AccordionContent className="text-black text-base">
                   Our free consultation includes a comprehensive review of your current digital presence, identification of key opportunities for growth, and a preliminary strategy discussion. We'll analyze your competitors, assess your market position, and outline potential strategies tailored to your business goals.
                 </AccordionContent>
               </AccordionItem>
               
-              <AccordionItem value="item-4">
+              <AccordionItem value="item-4" className="border border-gray-200 rounded-md px-6 py-2">
                 <AccordionTrigger className="text-left text-lg font-medium">
                   How can I contact Hustle Digital?
                 </AccordionTrigger>
-                <AccordionContent className="text-black">
+                <AccordionContent className="text-black text-base">
                   You can reach our team directly at <a href="mailto:hustledigi@gmail.com" className="text-hustle-accent hover:underline">hustledigi@gmail.com</a>, through our contact form, or via our social media channels. We aim to respond to all inquiries within 24 business hours.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
             
-            <div className="mt-10 text-center">
+            <div className="mt-16 text-center">
               <CTAButton 
                 text="View All FAQs" 
                 to="/faq"
                 variant="outline"
-                className="mx-auto"
+                className="mx-auto mr-4 inline-block"
+              />
+              <CTAButton 
+                text="Book a Free Consultation" 
+                to="/contact"
+                size="lg" 
+                className="mx-auto ml-4 mt-4 sm:mt-0 inline-block"
+                icon={true}
               />
             </div>
           </div>

@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -43,8 +44,18 @@ const CTAButton = ({
       behavior: 'smooth'
     });
   };
-  return <Button asChild className={`rounded-md font-medium ${buttonClass} ${className || ""}`} size={size} {...props}>
-      
-    </Button>;
+  return (
+    <Button 
+      asChild 
+      className={`rounded-md font-medium ${buttonClass} ${className || ""}`} 
+      size={size} 
+      {...props}
+    >
+      <Link to={to} onClick={handleClick} className="flex items-center gap-2">
+        {text}
+        {icon && <ArrowRight className="h-4 w-4" />}
+      </Link>
+    </Button>
+  );
 };
 export default CTAButton;
