@@ -1,6 +1,9 @@
+
 import SectionHeader from "@/components/shared/SectionHeader";
 import CTAButton from "@/components/shared/CTAButton";
-import { Award, Target, Users, Zap } from "lucide-react";
+import { Award, Globe, LayoutGrid, Mail, MessageSquare, PenTool, Settings, Smartphone, Target, Wrench } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
@@ -12,15 +15,19 @@ const About = () => {
             <div className="w-full md:w-1/2">
               <p className="text-hustle-accent font-medium mb-3 opacity-0 animate-fade-in">About Us</p>
               <h1 className="text-4xl md:text-5xl font-bold mb-6 opacity-0 animate-fade-in animate-delay-100">
-                We are Hustle Digital
+                We Hustle, You Scale
               </h1>
               <p className="text-xl text-hustle-light mb-6 opacity-0 animate-fade-in animate-delay-200">
-                A team of digital marketing experts dedicated to transforming businesses with strategic digital solutions.
+                That's not just our tagline—it's how we operate.
               </p>
               <p className="mb-8 text-hustle-light opacity-0 animate-fade-in animate-delay-300">
-                Founded with a passion for helping businesses thrive in the digital landscape, Hustle Digital combines technical expertise, creative thinking, and data-driven strategies to deliver exceptional results for our clients.
+                At Hustle Digital, we're the crew behind the brands that break the internet, dominate search results, and turn followers into loyal fans. 
+                We're not your average agency—we're your digital growth partners, your creative pit crew, your strategy-first, results-always team.
               </p>
-              <div className="opacity-0 animate-fade-in animate-delay-400">
+              <p className="mb-8 text-hustle-light opacity-0 animate-fade-in animate-delay-400">
+                Whether you're just getting started or ready to level up, we've got the tools, the team, and the energy to make it happen.
+              </p>
+              <div className="opacity-0 animate-fade-in animate-delay-500">
                 <CTAButton 
                   text="Work With Us" 
                   to="/contact" 
@@ -46,99 +53,119 @@ const About = () => {
         </div>
       </section>
 
-      {/* Our Values */}
+      {/* What We're About */}
       <section className="py-16 bg-hustle-muted">
         <div className="container mx-auto px-4 md:px-6">
           <SectionHeader
-            subtitle="Our Values"
-            title="What Drives Us"
-            description="Our core principles guide everything we do and shape how we work with our clients."
+            subtitle="What We're About"
+            title="Our Mission"
+            description={
+              <div className="space-y-4">
+                <p>
+                  We're all in on helping businesses like yours grow fast and grow smart. Hustle Digital was built to solve one problem: helping brands win online without wasting time or budget. We're lean, sharp, and laser-focused on results.
+                </p>
+                <p>
+                  Our squad blends business brains with creative firepower, delivering full-stack digital services that are as strategic as they are scroll-stopping.
+                </p>
+              </div>
+            }
             center={true}
           />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-            <ValueCard 
-              icon={<Zap className="text-hustle-accent" />}
-              title="Innovation"
-              description="We continuously explore new technologies and strategies to keep our clients ahead of the curve."
+          <div className="mt-12">
+            <div className="rounded-lg overflow-hidden shadow-xl transform transition-all duration-700 hover:scale-105 hover:shadow-hustle-accent/30">
+              <img 
+                src="/lovable-uploads/a01c26e3-eb4c-41b0-a94f-631d18c06121.png" 
+                alt="Data Analysis and Growth" 
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What We Do */}
+      <section className="py-16">
+        <div className="container mx-auto px-4 md:px-6">
+          <SectionHeader
+            subtitle="What We Do"
+            title="Your Digital Arsenal"
+            description="Our comprehensive suite of services designed to transform your online presence."
+            center={true}
+          />
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            <ServiceCard 
+              icon={<LayoutGrid className="text-hustle-accent" />}
+              title="Full Stack Website Development"
+              description="Custom-built websites that actually convert, not just look pretty."
               delay={0}
             />
             
-            <ValueCard 
-              icon={<Target className="text-hustle-accent" />}
-              title="Results-Focused"
-              description="Every strategy we implement is designed with clear objectives and measurable outcomes."
+            <ServiceCard 
+              icon={<Globe className="text-hustle-accent" />}
+              title="Google My Business Setup & Management"
+              description="Be seen where it matters most—locally and on the map."
               delay={100}
             />
             
-            <ValueCard 
-              icon={<Users className="text-hustle-accent" />}
-              title="Partnership"
-              description="We believe in building collaborative relationships with our clients that go beyond just service delivery."
+            <ServiceCard 
+              icon={<Settings className="text-hustle-accent" />}
+              title="Business Strategy Consulting"
+              description="Because tactics without a strategy? Useless. We help you zoom out before we zoom in."
               delay={200}
             />
             
-            <ValueCard 
-              icon={<Award className="text-hustle-accent" />}
-              title="Excellence"
-              description="We hold ourselves to the highest standards in every aspect of our work."
+            <ServiceCard 
+              icon={<Wrench className="text-hustle-accent" />}
+              title="Free Website Audit"
+              description="Real talk: We'll tell you what's working, what's broken, and how to fix it—on the house."
               delay={300}
+            />
+
+            <ServiceCard 
+              icon={<Smartphone className="text-hustle-accent" />}
+              title="Social Media Marketing"
+              description="Not just likes and shares. We build brand stories that get traction and drive action."
+              delay={400}
+            />
+
+            <ServiceCard 
+              icon={<Mail className="text-hustle-accent" />}
+              title="Email Marketing"
+              description="Inbox domination with campaigns that feel personal and perform like crazy."
+              delay={500}
+            />
+
+            <ServiceCard 
+              icon={<Target className="text-hustle-accent" />}
+              title="Performance Marketing"
+              description="Click, convert, repeat. Data-driven campaigns that stretch every dollar."
+              delay={600}
+            />
+
+            <ServiceCard 
+              icon={<PenTool className="text-hustle-accent" />}
+              title="Content & Copywriting"
+              description="Words that work. From landing pages to social captions, we make every line count."
+              delay={700}
+            />
+
+            <ServiceCard 
+              icon={<MessageSquare className="text-hustle-accent" />}
+              title="Content Production"
+              description="Photo, video, audio—we create content people stop scrolling for."
+              delay={800}
             />
           </div>
         </div>
       </section>
 
-      {/* Our Story */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col lg:flex-row gap-16">
-            <div className="w-full lg:w-1/2">
-              <SectionHeader
-                subtitle="Our Story"
-                title="From Vision to Reality"
-                description="The journey that made us who we are today."
-              />
-              
-              <div className="space-y-6 text-hustle-light">
-                <p className="opacity-0 animate-fade-in animate-delay-200">
-                  Hustle Digital was born from a simple observation: many businesses were struggling to navigate the complexities of digital marketing while staying focused on their core operations.
-                </p>
-                
-                <p className="opacity-0 animate-fade-in animate-delay-300">
-                  Founded by a team of digital marketing veterans with experience across various industries, we set out to create an agency that delivers not just services, but true business transformation.
-                </p>
-                
-                <p className="opacity-0 animate-fade-in animate-delay-400">
-                  Today, we're proud to have helped dozens of businesses across sectors achieve significant growth through targeted digital strategies that align with their unique goals and challenges.
-                </p>
-              </div>
-            </div>
-            
-            <div className="w-full lg:w-1/2 opacity-0 animate-fade-in animate-delay-300">
-              <div className="rounded-lg overflow-hidden shadow-xl transform transition-all duration-700 hover:scale-105 hover:shadow-hustle-accent/30">
-                <img 
-                  src="/lovable-uploads/a01c26e3-eb4c-41b0-a94f-631d18c06121.png" 
-                  alt="Data Analysis and Growth" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
+      {/* The Hustle Difference */}
       <section className="py-16 bg-hustle-muted">
         <div className="container mx-auto px-4 md:px-6">
-          <SectionHeader
-            subtitle="Our Expertise"
-            title="Digital Analytics Specialists"
-            description="We leverage data-driven insights to transform your business performance."
-            center={true}
-          />
-          
-          <div className="mt-12 flex flex-col md:flex-row gap-8 items-center justify-center">
-            <div className="w-full md:w-1/2 lg:w-2/5 opacity-0 animate-fade-in animate-delay-200">
+          <div className="flex flex-col lg:flex-row gap-16 items-center">
+            <div className="w-full lg:w-1/2 opacity-0 animate-fade-in animate-delay-300">
               <div className="rounded-xl overflow-hidden shadow-lg transform transition-all duration-700 hover:scale-105 hover:shadow-hustle-accent/30">
                 <img 
                   src="/lovable-uploads/b9a1d15f-fc22-474f-a937-f8f37ef302e7.png" 
@@ -148,38 +175,36 @@ const About = () => {
               </div>
             </div>
             
-            <div className="w-full md:w-1/2 lg:w-2/5 space-y-6 opacity-0 animate-fade-in animate-delay-300">
-              <h3 className="text-2xl md:text-3xl font-semibold">Analytics That Drive Results</h3>
-              <p className="text-hustle-light">
-                Our team specializes in translating complex data into actionable business insights. We help you understand your audience behavior, optimize your marketing spend, and identify new growth opportunities.
-              </p>
-              <ul className="space-y-3 text-hustle-light">
-                <li className="flex items-start">
-                  <div className="w-6 h-6 mr-2 rounded-full bg-hustle-accent/10 flex items-center justify-center">
-                    <span className="text-hustle-accent font-bold">✓</span>
+            <div className="w-full lg:w-1/2">
+              <SectionHeader
+                subtitle="The Hustle Difference"
+                title="What Sets Us Apart"
+                description={
+                  <div className="space-y-4">
+                    <p>
+                      We're not here to sell you stuff you don't need. We're here to build something with you. We work fast, stay agile, and never settle. You bring the ambition—we'll bring the hustle.
+                    </p>
+                    <p>
+                      Let's scale your brand the smart way.
+                    </p>
                   </div>
-                  <span>Comprehensive campaign tracking and analysis</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-6 h-6 mr-2 rounded-full bg-hustle-accent/10 flex items-center justify-center">
-                    <span className="text-hustle-accent font-bold">✓</span>
-                  </div>
-                  <span>Custom dashboard development for real-time monitoring</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-6 h-6 mr-2 rounded-full bg-hustle-accent/10 flex items-center justify-center">
-                    <span className="text-hustle-accent font-bold">✓</span>
-                  </div>
-                  <span>Data-driven strategy adjustments for maximum ROI</span>
-                </li>
-              </ul>
+                }
+              />
+              
+              <div className="mt-8">
+                <CTAButton 
+                  text="Start Your Journey" 
+                  to="/contact" 
+                  size="lg"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section - Modified to remove whitespace */}
-      <section className="py-16 bg-black text-white mb-0">
+      {/* CTA Section */}
+      <section className="py-16 bg-black text-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 opacity-0 animate-fade-in">
@@ -210,10 +235,17 @@ const About = () => {
   );
 };
 
-// Value Card Component for the Values section
-const ValueCard = ({ icon, title, description, delay = 0 }) => {
+// Service Card Component for the What We Do section
+const ServiceCard = ({ icon, title, description, delay = 0 }) => {
   return (
-    <div className={`bg-white p-8 rounded-lg shadow-sm opacity-0 animate-fade-in animate-delay-${delay} transform transition-all duration-500 hover:shadow-lg hover:shadow-hustle-accent/10 hover:-translate-y-1`}>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: delay / 1000 }}
+      whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }}
+      className="bg-white p-8 rounded-lg shadow-sm border border-transparent hover:border-hustle-accent/10"
+    >
       <div className="w-12 h-12 bg-hustle-accent/10 rounded-full flex items-center justify-center mb-4 transform transition-all duration-300 hover:scale-110 hover:bg-hustle-accent/20">
         {icon}
       </div>
@@ -221,7 +253,7 @@ const ValueCard = ({ icon, title, description, delay = 0 }) => {
       <p className="text-hustle-light">
         {description}
       </p>
-    </div>
+    </motion.div>
   );
 };
 
