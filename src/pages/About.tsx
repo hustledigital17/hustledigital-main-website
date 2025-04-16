@@ -3,6 +3,7 @@ import CTAButton from "@/components/shared/CTAButton";
 import { Award, Globe, LayoutGrid, Mail, MessageSquare, PenTool, Settings, Smartphone, Target, Wrench } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
+
 const About = () => {
   return <div className="pb-0 min-h-screen">
       {/* Hero Section */}
@@ -65,7 +66,7 @@ const About = () => {
       {/* What We Do */}
       <section className="py-16">
         <div className="container mx-auto px-4 md:px-6">
-          <SectionHeader subtitle="What We Do" title="Your Digital Arsenal" description="Our comprehensive suite of services designed to transform your online presence." center={true} />
+          <SectionHeader subtitle="What We Do" title="Our Digital Arsenal" description="Our comprehensive suite of services designed to transform your online presence." center={true} />
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             <ServiceCard icon={<LayoutGrid className="text-hustle-accent" />} title="Full Stack Website Development" description="Custom-built websites that actually convert, not just look pretty." delay={0} />
