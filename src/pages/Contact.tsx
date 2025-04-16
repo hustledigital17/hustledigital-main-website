@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { 
@@ -20,9 +19,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin, Calendar, Clock12 } from "lucide-react";
 import SectionHeader from "@/components/shared/SectionHeader";
 import CTAButton from "@/components/shared/CTAButton";
+import SocialMediaLinks from "@/components/shared/SocialMediaLinks";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -39,7 +39,6 @@ const services = [
   { value: "review-management", label: "Review Collection & Management" }
 ];
 
-// Define form schema with Zod
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
@@ -54,7 +53,6 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
   const { toast } = useToast();
   
-  // Initialize form with react-hook-form and zod resolver
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -69,7 +67,6 @@ const Contact = () => {
   const onSubmit = (data: ContactFormValues) => {
     setLoading(true);
     
-    // Simulate form submission
     setTimeout(() => {
       setLoading(false);
       toast({
@@ -82,7 +79,6 @@ const Contact = () => {
   
   return (
     <div className="pt-20 min-h-screen">
-      {/* Hero Section */}
       <section className="py-16 md:py-20 bg-hustle-muted">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto text-center">
@@ -97,11 +93,9 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Information and Form */}
       <section className="py-16">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Contact Information */}
             <div>
               <SectionHeader
                 subtitle="Get in Touch"
@@ -192,7 +186,6 @@ const Contact = () => {
               </div>
             </div>
             
-            {/* Contact Form */}
             <div className="opacity-0 animate-fade-in animate-delay-300">
               <div id="contact-form" className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
                 <h2 className="text-2xl font-semibold mb-6">Send Us a Message</h2>
@@ -300,6 +293,49 @@ const Contact = () => {
                     </Button>
                   </form>
                 </Form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-hustle-muted">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <SectionHeader
+              subtitle="Ready To Start?"
+              title="Take Action Today"
+              description="Schedule a personalized session with our digital experts to explore how we can elevate your brand."
+              center={true}
+            />
+            
+            <div className="mt-10 flex flex-col md:flex-row gap-6 justify-center items-center">
+              <div className="bg-white p-8 rounded-xl shadow-md flex flex-col items-center max-w-xs w-full transform transition-all duration-500 hover:scale-105 hover:shadow-lg">
+                <div className="p-4 bg-hustle-accent/10 rounded-full mb-4">
+                  <Calendar size={28} className="text-hustle-accent" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Free Consultation</h3>
+                <p className="text-hustle-light text-center mb-6">Get expert advice on your digital marketing strategy.</p>
+                <CTAButton 
+                  text="Book Now" 
+                  to="#contact-form" 
+                  variant="black"
+                  size="sm"
+                />
+              </div>
+              
+              <div className="bg-white p-8 rounded-xl shadow-md flex flex-col items-center max-w-xs w-full transform transition-all duration-500 hover:scale-105 hover:shadow-lg">
+                <div className="p-4 bg-hustle-accent/10 rounded-full mb-4">
+                  <Clock12 size={28} className="text-hustle-accent" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Same-Day Response</h3>
+                <p className="text-hustle-light text-center mb-6">Contact us now for a guaranteed response within 24 hours.</p>
+                <CTAButton 
+                  text="Contact Us" 
+                  to="#contact-form" 
+                  variant="black"
+                  size="sm"
+                />
               </div>
             </div>
           </div>
