@@ -62,19 +62,19 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-sm font-medium hover:text-hustle-accent transition-colors" onClick={handleLinkClick}>
+            <Link to="/" className="text-sm font-medium hover:text-primary-light transition-colors" onClick={handleLinkClick}>
               Home
             </Link>
-            <Link to="/about" className="text-sm font-medium hover:text-hustle-accent transition-colors" onClick={handleLinkClick}>
+            <Link to="/about" className="text-sm font-medium hover:text-primary-light transition-colors" onClick={handleLinkClick}>
               About
             </Link>
-            <Link to="/services" className="text-sm font-medium hover:text-hustle-accent transition-colors" onClick={handleLinkClick}>
+            <Link to="/services" className="text-sm font-medium hover:text-primary-light transition-colors" onClick={handleLinkClick}>
               Services
             </Link>
-            <Link to="/contact" className="text-sm font-medium hover:text-hustle-accent transition-colors" onClick={handleLinkClick}>
+            <Link to="/contact" className="text-sm font-medium hover:text-primary-light transition-colors" onClick={handleLinkClick}>
               Contact
             </Link>
-            <Button asChild size="sm" className="bg-hustle-accent hover:bg-hustle-accent/90 shadow-sm hover:shadow-md transition-all">
+            <Button asChild size="sm" className="bg-primary hover:bg-primary/90 shadow-sm hover:shadow-md transition-all">
               <Link to="/contact" onClick={handleLinkClick}>Book Appointment</Link>
             </Button>
           </nav>
@@ -165,7 +165,7 @@ const Navbar = () => {
                     Contact
                   </Link>
                   <div className="pt-4">
-                    <Button asChild className="w-full bg-hustle-accent hover:bg-hustle-accent/90 shadow-sm">
+                    <Button asChild className="w-full bg-primary hover:bg-primary/90 shadow-sm">
                       <Link to="/contact" onClick={handleLinkClick}>Book Appointment</Link>
                     </Button>
                   </div>

@@ -53,9 +53,9 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
         hustle: {
-          accent: "#c130ef",
+          accent: "#ea384c",
           light: "#555555",
-          muted: "#f5f5f7",
+          muted: "#fff0f0",
         },
       },
       borderRadius: {

@@ -14,8 +14,8 @@ const BusinessAnalyticsImage = () => {
   return (
     <div className="relative flex justify-center items-center">
       <div 
-        className={`absolute w-64 h-64 md:w-80 md:h-80 bg-hustle-accent/10 rounded-full transition-all duration-700 ${
-          isHovered ? 'scale-110 bg-hustle-accent/20' : ''
+        className={`absolute w-64 h-64 md:w-80 md:h-80 bg-primary/10 rounded-full transition-all duration-700 ${
+          isHovered ? 'scale-110 bg-primary/20' : ''
         }`}
       ></div>
       <div 
@@ -30,7 +30,7 @@ const BusinessAnalyticsImage = () => {
           alt="Business Analytics Dashboard"
           className="max-w-full h-auto object-contain"
           style={{
-            filter: `drop-shadow(0px 4px 8px rgba(193, 48, 239, ${isHovered ? '0.4' : '0.2'}))`,
+            filter: `drop-shadow(0px 4px 8px rgba(234, 56, 76, ${isHovered ? '0.4' : '0.2'}))`,
             maxHeight: "400px"
           }}
         />
