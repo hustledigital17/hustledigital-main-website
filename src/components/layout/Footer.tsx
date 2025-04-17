@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone } from "lucide-react";
+
 const Footer = () => {
   const year = new Date().getFullYear();
-  return <footer className="bg-black text-white pt-16 pb-6">
+  return (
+    <footer className="bg-black text-white pt-16 pb-6">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
@@ -109,13 +111,12 @@ const Footer = () => {
               <Link to="/privacy" className="text-gray-500 text-sm hover:text-white transition-colors">
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="text-gray-500 text-sm hover:text-white transition-colors">
-                Terms of Service
-              </Link>
             </div>
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;

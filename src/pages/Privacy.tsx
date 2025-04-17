@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -93,7 +92,7 @@ const Privacy = () => {
             </p>
             <p className="my-4">
               <strong>📧</strong> <a href="mailto:hustledigi@gmail.com" className="text-hustle-accent hover:underline">hustledigi@gmail.com</a><br />
-              <strong>📞</strong> +1 (555) 123-4567
+              <strong>📞</strong> +91 93951 85673 / +91 98642 30603
             </p>
           </div>
           
