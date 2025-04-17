@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { ButtonProps } from "@/components/ui/button";
 
 // Create a custom type for button variants
-type CTAVariant = "default" | "outline" | "black" | "white" | "purple";
+type CTAVariant = "default" | "outline" | "black" | "white" | "red";
 interface CTAButtonProps {
   text: string;
   to: string;
@@ -31,8 +31,8 @@ const CTAButton = ({
     case "white":
       buttonClass = "bg-white text-black hover:bg-white/90 shadow-md hover:shadow-lg";
       break;
-    case "purple":
-      buttonClass = "bg-[#9b30f5] text-white hover:bg-[#9b30f5]/90 shadow-md hover:shadow-lg transition-all duration-300 ease-in-out";
+    case "red":
+      buttonClass = "bg-[#ea384c] text-white hover:bg-[#ea384c]/90 shadow-md hover:shadow-lg transition-all duration-300 ease-in-out";
       break;
     case "outline":
       buttonClass = "bg-transparent border border-current text-current hover:bg-hustle-muted/10 hover:border-opacity-70";
@@ -79,3 +79,4 @@ const CTAButton = ({
 };
 
 export default CTAButton;
+

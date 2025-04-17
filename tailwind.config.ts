@@ -47,6 +47,11 @@ export default {
           DEFAULT: "#fee2e2", // Very light red (almost pink)
           foreground: "#7f1d1d", // Dark red for text
         },
+        hustle: {
+          accent: "#ea384c",   // Replaced purple with red
+          light: "#555555",
+          muted: "#fff0f0",    // Light red-tinted background
+        },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
@@ -79,3 +84,4 @@ export default {
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+
