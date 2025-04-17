@@ -12,7 +12,6 @@ import CTAButton from "@/components/shared/CTAButton";
 import SocialMediaLinks from "@/components/shared/SocialMediaLinks";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-
 const services = [{
   value: "website-development",
   label: "Full Stack Website Development"
@@ -44,7 +43,6 @@ const services = [{
   value: "review-management",
   label: "Review Collection & Management"
 }];
-
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
@@ -52,9 +50,7 @@ const formSchema = z.object({
   service: z.string().optional(),
   message: z.string().min(10, "Message must be at least 10 characters")
 });
-
 type ContactFormValues = z.infer<typeof formSchema>;
-
 const Contact = () => {
   const [loading, setLoading] = useState(false);
   const {
@@ -70,7 +66,6 @@ const Contact = () => {
       message: ""
     }
   });
-
   const onSubmit = (data: ContactFormValues) => {
     setLoading(true);
     setTimeout(() => {
@@ -82,7 +77,6 @@ const Contact = () => {
       form.reset();
     }, 1500);
   };
-
   return <div className="pt-20 min-h-screen">
       <section className="py-16 md:py-20 bg-hustle-muted">
         <div className="container mx-auto px-4 md:px-6">
@@ -129,19 +123,7 @@ const Contact = () => {
                   </div>
                 </div>
                 
-                <div className="flex items-start opacity-0 animate-fade-in animate-delay-400">
-                  <div className="mr-4 p-3 rounded-full bg-hustle-accent/10 text-hustle-accent">
-                    <MapPin size={20} />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-1">Visit Us</h3>
-                    <p className="text-black">
-                      123 Marketing Street<br />
-                      Digital City, DC 10101<br />
-                      United States
-                    </p>
-                  </div>
-                </div>
+                
                 
                 <div className="flex items-start opacity-0 animate-fade-in animate-delay-500">
                   <div className="mr-4 p-3 rounded-full bg-hustle-accent/10 text-hustle-accent">
@@ -269,5 +251,4 @@ const Contact = () => {
       </section>
     </div>;
 };
-
 export default Contact;
