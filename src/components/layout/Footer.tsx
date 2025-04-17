@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone } from "lucide-react";
 
@@ -93,7 +92,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Phone size={16} className="mr-2 text-hustle-accent" />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 93951 85673 / +91 98642 30603</span>
               </li>
             </ul>
             <div className="mt-4">
