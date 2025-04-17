@@ -125,18 +125,7 @@ const Contact = () => {
                 
                 
                 
-                <div className="flex items-start opacity-0 animate-fade-in animate-delay-500">
-                  <div className="mr-4 p-3 rounded-full bg-hustle-accent/10 text-hustle-accent">
-                    <Clock size={20} />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-1">Business Hours</h3>
-                    <p className="text-black">
-                      Monday - Friday: 9:00 AM - 6:00 PM<br />
-                      Saturday - Sunday: Closed
-                    </p>
-                  </div>
-                </div>
+                
               </div>
               
               
