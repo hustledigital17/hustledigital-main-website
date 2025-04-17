@@ -10,9 +10,9 @@ import WhyChooseUsCard from "@/components/shared/WhyChooseUsCard";
 import TestimonialCard from "@/components/shared/TestimonialCard";
 import { motion } from "framer-motion";
 import { Separator } from "@/components/ui/separator";
+
 const Index = () => {
   return <div className="flex flex-col min-h-screen">
-      {/* Hero Section - Added more padding and spacing */}
       <section className="pt-36 md:pt-44 pb-28 md:pb-36 relative overflow-hidden">
         <div className="container mx-auto px-6 md:px-8">
           <div className="flex flex-col md:flex-row items-center md:gap-12">
@@ -45,7 +45,7 @@ const Index = () => {
                 Transform your digital presence with strategies that drive growth and deliver measurable success.
               </motion.p>
               
-              <motion.div className="flex flex-col sm:flex-row gap-5 pt-6" initial={{
+              <motion.div className="flex flex-col sm:flex-row gap-5 pt-6 space-x-4" initial={{
               opacity: 0,
               y: 20
             }} animate={{
@@ -77,7 +77,6 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Why Choose Us - Added more padding and spacing */}
       <section className="py-28 bg-hustle-muted">
         <div className="container mx-auto px-6 md:px-8">
           <SectionHeader subtitle="Why Choose Us" title="Digital Excellence, Measurable Results" description="At Hustle Digital, we combine strategic thinking with cutting-edge execution to transform your digital presence." center={true} />
@@ -93,12 +92,11 @@ const Index = () => {
           </div>
           
           <div className="mt-16 text-center opacity-0 animate-fade-in animate-delay-400">
-            <CTAButton text="Book a Free Consultation" to="/contact" size="lg" className="mx-auto" icon={true} />
+            <CTAButton text="Book a Free Consultation" to="/contact" size="lg" className="mx-auto inline-block mr-4" icon={true} />
           </div>
         </div>
       </section>
       
-      {/* Featured Services - Added more padding and spacing */}
       <section className="py-28">
         <div className="container mx-auto px-6 md:px-8">
           <SectionHeader subtitle="Our Services" title="Strategic Digital Marketing Solutions" description="We offer a comprehensive suite of services designed to elevate your brand and drive measurable business growth." center={true} />
@@ -114,7 +112,6 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Testimonials Section - Updated with better spacing and new images */}
       <section className="py-28 bg-hustle-muted">
         <div className="container mx-auto px-6 md:px-8">
           <SectionHeader subtitle="Client Testimonials" title="What Our Clients Say" description="Don't just take our word for it. Here's what our clients have to say about working with Hustle Digital." center={true} />
@@ -133,7 +130,6 @@ const Index = () => {
         </div>
       </section>
       
-      {/* CTA Section - Added more padding and a separator */}
       <section className="py-28 bg-black text-white">
         <div className="container mx-auto px-6 md:px-8">
           <div className="max-w-3xl mx-auto text-center">
@@ -186,10 +182,6 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Added a section break with elegant spacing */}
-      
-      
-      {/* FAQ Section - Increased spacing */}
       <section className="py-28 bg-white" id="faq-section">
         <div className="container mx-auto px-6 md:px-8">
           <SectionHeader subtitle="Frequently Asked Questions" title="Got Questions? We've Got Answers" description="Here are some common questions we receive from our clients. If you can't find what you're looking for, don't hesitate to reach out." center={true} />
