@@ -1,40 +1,56 @@
-
-import { useEffect, useState } from "react";
+import React from "react";
+import { motion } from "framer-motion";
 
 const BusinessAnalyticsImage = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
-
-  useEffect(() => {
-    const img = new Image();
-    img.src = "/lovable-uploads/bc2d4153-fc69-4139-be66-9ff710f6d083.png";
-    img.onload = () => setIsLoaded(true);
-  }, []);
-
   return (
     <div className="relative flex justify-center items-center">
-      <div 
-        className={`absolute w-64 h-64 md:w-80 md:h-80 bg-primary/10 rounded-full transition-all duration-700 ${
-          isHovered ? 'scale-110 bg-primary/20' : ''
-        }`}
-      ></div>
-      <div 
-        className={`relative z-10 transform transition-all duration-500 ${
-          isHovered ? 'scale-110' : 'hover:scale-105'
-        } ${isLoaded ? "opacity-100" : "opacity-0"} transition-opacity duration-300`}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+      <motion.div 
+        className="absolute w-64 h-64 md:w-80 md:h-80 bg-primary/10 rounded-full"
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{
+          type: "spring",
+          stiffness: 100,
+          damping: 20,
+          delay: 0.2
+        }}
+      />
+      <motion.div 
+        className="relative z-10"
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{
+          type: "spring",
+          stiffness: 100,
+          damping: 20,
+          delay: 0.4
+        }}
+        whileHover={{ 
+          scale: 1.05,
+          transition: { 
+            type: "spring", 
+            stiffness: 400, 
+            damping: 25 
+          }
+        }}
       >
-        <img
-          src="/lovable-uploads/bc2d4153-fc69-4139-be66-9ff710f6d083.png"
-          alt="Business Analytics Dashboard"
+        <motion.img
+          src="/lovable-uploads/analytics-world-map.png"
+          alt="Global Business Analytics"
           className="max-w-full h-auto object-contain"
           style={{
-            filter: `drop-shadow(0px 4px 8px rgba(234, 56, 76, ${isHovered ? '0.4' : '0.2'}))`,
             maxHeight: "400px"
           }}
+          initial={{ filter: "drop-shadow(0px 4px 8px rgba(234, 56, 76, 0))" }}
+          animate={{ filter: "drop-shadow(0px 4px 8px rgba(234, 56, 76, 0.2))" }}
+          whileHover={{ 
+            filter: "drop-shadow(0px 8px 16px rgba(234, 56, 76, 0.4))",
+          }}
+          transition={{
+            filter: { duration: 0.3 }
+          }}
         />
-      </div>
+      </motion.div>
     </div>
   );
 };

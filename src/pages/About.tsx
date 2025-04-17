@@ -31,7 +31,7 @@ const About = () => {
             </div>
             <div className="w-full md:w-1/2 relative opacity-0 animate-fade-in animate-delay-300">
               <div className="aspect-video rounded-xl overflow-hidden transform transition-all duration-700 hover:scale-105 hover:shadow-xl hover:shadow-hustle-accent/20">
-                <img src="/lovable-uploads/c44718e1-3483-4794-9e45-34eca77c194d.png" alt="Business Analytics Chart" className="w-full h-full object-cover" />
+                <img src="/lovable-uploads/analytics-mobile-app.png" alt="Mobile Analytics Dashboard" className="w-full h-full object-cover" />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-hustle-accent text-white p-4 rounded-lg shadow-lg md:max-w-xs transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
                 <p className="font-medium">
@@ -96,7 +96,7 @@ const About = () => {
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             <div className="w-full lg:w-1/2 opacity-0 animate-fade-in animate-delay-300">
               <div className="rounded-xl overflow-hidden shadow-lg transform transition-all duration-700 hover:scale-105 hover:shadow-hustle-accent/30">
-                <img src="/lovable-uploads/b9a1d15f-fc22-474f-a937-f8f37ef302e7.png" alt="Data Dashboard" className="w-full h-auto" />
+                <img src="/lovable-uploads/analytics-chart-person.png" alt="Analytics Growth Chart" className="w-full h-auto" />
               </div>
             </div>
             

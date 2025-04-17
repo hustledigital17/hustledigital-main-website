@@ -45,19 +45,36 @@ const Index = () => {
               Transform your digital presence with strategies that drive growth and deliver measurable success.
             </motion.p>
             
-            <motion.div className="flex flex-col sm:flex-row items-center gap-5 pt-6 space-y-4 sm:space-y-0 sm:space-x-4" initial={{
-              opacity: 0,
-              y: 20
-            }} animate={{
-              opacity: 1,
-              y: 0
-            }} transition={{
-              duration: 0.6,
-              delay: 0.3,
-              ease: "easeOut"
-            }}>
-              <CTAButton text="Book a Free Consultation" to="/contact" size="lg" icon={true} />
-              <CTAButton text="Our Services" to="/services" variant="outline" size="lg" />
+            <motion.div 
+              className="flex flex-col sm:flex-row items-center gap-3 sm:gap-5 pt-6" 
+              initial={{
+                opacity: 0,
+                y: 20
+              }} 
+              animate={{
+                opacity: 1,
+                y: 0
+              }} 
+              transition={{
+                duration: 0.6,
+                delay: 0.3,
+                ease: "easeOut"
+              }}
+            >
+              <CTAButton 
+                text="Book a Free Consultation" 
+                to="/contact" 
+                size="lg" 
+                icon={true} 
+                className="w-full sm:w-auto h-[56px] text-lg"
+              />
+              <CTAButton 
+                text="Our Services" 
+                to="/services" 
+                variant="outline" 
+                size="lg" 
+                className="w-full sm:w-auto h-[56px] text-lg"
+              />
             </motion.div>
           </div>
           
@@ -99,16 +116,46 @@ const Index = () => {
     
     <section className="py-28">
       <div className="container mx-auto px-6 md:px-8">
-        <SectionHeader subtitle="Our Services" title="Strategic Digital Marketing Solutions" description="We offer a comprehensive suite of services designed to elevate your brand and drive measurable business growth." center={true} />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <SectionHeader 
+            subtitle="Our Services" 
+            title="Strategic Digital Marketing Solutions" 
+            description="We offer a comprehensive suite of services designed to elevate your brand and drive measurable business growth." 
+            center={true} 
+          />
+        </motion.div>
         
-        <div className="mt-16">
+        <div className="mt-20 mb-24">
           <ServicesCarousel />
         </div>
         
-        <div className="mt-16 text-center opacity-0 animate-fade-in animate-delay-400">
-          <CTAButton text="View All Services" to="/services" size="lg" className="mx-auto mr-4 inline-block" />
-          <CTAButton text="Book a Free Consultation" to="/contact" variant="outline" size="lg" className="mx-auto ml-4 mt-4 sm:mt-0 inline-block" icon={true} />
-        </div>
+        <motion.div 
+          className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <CTAButton 
+            text="View All Services" 
+            to="/services" 
+            size="lg" 
+            className="w-full sm:w-auto min-w-[200px]" 
+          />
+          <CTAButton 
+            text="Book a Free Consultation" 
+            to="/contact" 
+            variant="outline" 
+            size="lg" 
+            className="w-full sm:w-auto min-w-[200px]" 
+            icon={true} 
+          />
+        </motion.div>
       </div>
     </section>
     
@@ -225,9 +272,9 @@ const Index = () => {
             </AccordionItem>
           </Accordion>
           
-          <div className="mt-16 text-center">
-            <CTAButton text="View All FAQs" to="/faq" variant="outline" className="mx-auto mr-4 inline-block" />
-            <CTAButton text="Book a Free Consultation" to="/contact" size="lg" className="mx-auto ml-4 mt-4 sm:mt-0 inline-block" icon={true} />
+          <div className="mt-16 flex flex-col items-center gap-4 max-w-[440px] mx-auto">
+            <CTAButton text="View All FAQs" to="/faq" variant="outline" className="w-full" />
+            <CTAButton text="Book a Free Consultation" to="/contact" size="lg" className="w-full" icon={true} />
           </div>
         </div>
       </div>

@@ -1,13 +1,16 @@
-
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { ButtonLink } from "@/components/ui/button-link";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+interface NavbarProps {}
+
+const Navbar: React.FC<NavbarProps> = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [scrolled, setScrolled] = useState<boolean>(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,13 +27,31 @@ const Navbar = () => {
     };
   }, []);
 
+  // Close menu on route change
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
+
   // Add body class to prevent scrolling when menu is open
   useEffect(() => {
     if (isOpen) {
-      document.body.classList.add('overflow-hidden');
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.style.touchAction = 'none';
     } else {
-      document.body.classList.remove('overflow-hidden');
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.touchAction = '';
     }
+
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.touchAction = '';
+    };
   }, [isOpen]);
 
   const toggleMenu = () => {
@@ -46,136 +67,235 @@ const Navbar = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const navVariants = {
+    hidden: { y: -100, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 20
+      }
+    }
+  };
+
+  const menuItemVariants = {
+    hidden: { x: 20, opacity: 0 },
+    visible: (i: number) => ({
+      x: 0,
+      opacity: 1,
+      transition: {
+        delay: i * 0.1,
+        type: "spring",
+        stiffness: 100,
+        damping: 20
+      }
+    })
+  };
+
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <motion.header 
+      initial="hidden"
+      animate="visible"
+      variants={navVariants}
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
         scrolled ? "bg-white/90 backdrop-blur-md shadow-sm" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          <Link to="/" className="flex items-center" onClick={handleLinkClick}>
-            <span className="text-xl font-bold tracking-tight">
-              Hustle Digital
-            </span>
-          </Link>
+        <div className="relative flex items-center justify-between h-14 sm:h-16 md:h-20">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+          >
+            <Link to="/" className="flex items-center" onClick={handleLinkClick}>
+              <span className="text-lg sm:text-xl font-bold tracking-tight">
+                Hustle Digital
+              </span>
+            </Link>
+          </motion.div>
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-sm font-medium hover:text-primary-light transition-colors" onClick={handleLinkClick}>
-              Home
-            </Link>
-            <Link to="/about" className="text-sm font-medium hover:text-primary-light transition-colors" onClick={handleLinkClick}>
-              About
-            </Link>
-            <Link to="/services" className="text-sm font-medium hover:text-primary-light transition-colors" onClick={handleLinkClick}>
-              Services
-            </Link>
-            <Link to="/contact" className="text-sm font-medium hover:text-primary-light transition-colors" onClick={handleLinkClick}>
-              Contact
-            </Link>
-            <Button asChild size="sm" className="bg-primary hover:bg-primary/90 shadow-sm hover:shadow-md transition-all">
-              <Link to="/contact" onClick={handleLinkClick}>Book Appointment</Link>
-            </Button>
+            {['/', '/about', '/services', '/contact'].map((path, i) => (
+              <motion.div
+                key={path}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1, type: "spring", stiffness: 100, damping: 20 }}
+                className="relative"
+              >
+                <Link 
+                  to={path} 
+                  className={`text-sm font-medium transition-all duration-300 hover:text-primary relative ${
+                    location.pathname === path ? 'text-primary' : ''
+                  }`}
+                  onClick={handleLinkClick}
+                >
+                  {path === '/' ? 'Home' : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}
+                  {location.pathname === path && (
+                    <motion.div
+                      layoutId="navbar-underline"
+                      className="absolute left-0 right-0 h-0.5 bg-primary bottom-[-4px]"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 380,
+                        damping: 30
+                      }}
+                    />
+                  )}
+                </Link>
+              </motion.div>
+            ))}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, type: "spring", stiffness: 100, damping: 20 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <ButtonLink 
+                href="/contact"
+                variant="primary"
+                size="sm"
+                onClick={handleLinkClick}
+              >
+                Book Appointment
+              </ButtonLink>
+            </motion.div>
           </nav>
 
           {/* Mobile Menu Toggle */}
-          <button 
-            className="md:hidden p-2 focus:outline-none relative z-50" 
+          <Button
+            variant="ghost"
+            size="sm"
+            className="relative md:hidden z-[102] h-9 w-9 p-0 hover:bg-transparent focus:bg-transparent" 
             onClick={toggleMenu}
             aria-label="Toggle menu"
+            aria-expanded={isOpen}
           >
-            <AnimatePresence mode="wait">
-              {isOpen ? (
-                <motion.div
-                  key="close"
-                  initial={{ opacity: 0, rotate: -90 }}
-                  animate={{ opacity: 1, rotate: 0 }}
-                  exit={{ opacity: 0, rotate: 90 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <X size={24} />
-                </motion.div>
-              ) : (
-                <motion.div
-                  key="menu"
-                  initial={{ opacity: 0, rotate: 90 }}
-                  animate={{ opacity: 1, rotate: 0 }}
-                  exit={{ opacity: 0, rotate: -90 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Menu size={24} />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </button>
+            <Menu className="h-5 w-5" />
+          </Button>
         </div>
       </div>
 
       {/* Mobile Menu Overlay */}
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {isOpen && (
-          <>
+          <React.Fragment>
             {/* Backdrop blur */}
             <motion.div 
-              className="fixed inset-0 bg-black/30 backdrop-blur-md z-40 md:hidden"
+              className="fixed inset-0 bg-black/30 backdrop-blur-sm z-[101] touch-none md:hidden cursor-pointer"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.2 }}
               onClick={closeMenu}
             />
             
             {/* Menu content */}
             <motion.div 
-              className="fixed inset-y-0 right-0 w-full max-w-xs bg-white shadow-xl z-40 md:hidden flex flex-col"
+              className="fixed inset-y-0 right-0 w-[min(85vw,400px)] bg-white shadow-xl z-[101] md:hidden flex flex-col overflow-hidden"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              transition={{ 
+                type: "spring", 
+                damping: 30, 
+                stiffness: 300
+              }}
             >
-              <div className="flex-1 overflow-y-auto py-20 px-6">
-                <div className="flex flex-col space-y-6">
-                  <Link 
-                    to="/" 
-                    className="text-lg font-medium border-b border-gray-100 pb-4"
-                    onClick={handleLinkClick}
-                  >
-                    Home
-                  </Link>
-                  <Link 
-                    to="/about" 
-                    className="text-lg font-medium border-b border-gray-100 pb-4"
-                    onClick={handleLinkClick}
-                  >
-                    About
-                  </Link>
-                  <Link 
-                    to="/services" 
-                    className="text-lg font-medium border-b border-gray-100 pb-4"
-                    onClick={handleLinkClick}
-                  >
-                    Services
-                  </Link>
-                  <Link 
-                    to="/contact" 
-                    className="text-lg font-medium border-b border-gray-100 pb-4"
-                    onClick={handleLinkClick}
-                  >
-                    Contact
-                  </Link>
-                  <div className="pt-4">
-                    <Button asChild className="w-full bg-primary hover:bg-primary/90 shadow-sm">
-                      <Link to="/contact" onClick={handleLinkClick}>Book Appointment</Link>
-                    </Button>
-                  </div>
-                </div>
+              {/* Menu Header */}
+              <div className="relative h-16 sm:h-20 flex items-center justify-between px-6 border-b border-gray-100">
+                <span className="text-xl font-semibold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">Menu</span>
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="h-10 w-10 rounded-full hover:bg-gray-100 flex items-center justify-center transition-colors"
+                  onClick={closeMenu}
+                  aria-label="Close menu"
+                >
+                  <X className="h-5 w-5" />
+                </motion.button>
               </div>
+
+              {/* Menu Content */}
+              <div className="flex-1 overflow-y-auto">
+                <nav className="flex flex-col py-6 px-6">
+                  {[
+                    { path: '/', label: 'Home', delay: 0 },
+                    { path: '/about', label: 'About', delay: 0.1 },
+                    { path: '/services', label: 'Services', delay: 0.2 },
+                    { path: '/contact', label: 'Contact', delay: 0.3 }
+                  ].map(({ path, label, delay }) => (
+                    <motion.div
+                      key={path}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ 
+                        delay,
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 20
+                      }}
+                      className="relative mb-4"
+                    >
+                      <Link 
+                        to={path} 
+                        className={`flex items-center h-14 px-4 text-lg font-medium rounded-xl transition-all duration-300 ${
+                          location.pathname === path 
+                            ? 'text-primary bg-primary/5 shadow-sm' 
+                            : 'text-gray-800 hover:bg-gray-50'
+                        }`}
+                        onClick={handleLinkClick}
+                      >
+                        {label}
+                        {location.pathname === path && (
+                          <motion.div
+                            layoutId="mobile-navbar-indicator"
+                            className="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-r"
+                            initial={{ opacity: 0, scale: 0 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{
+                              type: "spring",
+                              stiffness: 380,
+                              damping: 30
+                            }}
+                          />
+                        )}
+                      </Link>
+                    </motion.div>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Menu Footer */}
+              <motion.div 
+                className="p-6 border-t border-gray-100"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+              >
+                <ButtonLink 
+                  href="/contact"
+                  variant="primary"
+                  fullWidth
+                  size="lg"
+                  className="rounded-xl shadow-lg shadow-primary/20"
+                  onClick={handleLinkClick}
+                >
+                  Book Appointment
+                </ButtonLink>
+              </motion.div>
             </motion.div>
-          </>
+          </React.Fragment>
         )}
       </AnimatePresence>
-    </header>
+    </motion.header>
   );
 };
 

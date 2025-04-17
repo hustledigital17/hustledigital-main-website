@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Cell } from "recharts";
 
@@ -28,8 +27,8 @@ const AnalyticsVisual = () => {
       
       <div className="relative z-10 flex flex-col items-center">
         <img
-          src="/lovable-uploads/bc2d4153-fc69-4139-be66-9ff710f6d083.png"
-          alt="Business Analytics Dashboard"
+          src="/lovable-uploads/analytics-mobile-app.png"
+          alt="Mobile Analytics Dashboard"
           className="max-w-full h-auto object-contain mb-6"
           style={{
             filter: "drop-shadow(0px 4px 8px rgba(234, 56, 76, 0.2))",
