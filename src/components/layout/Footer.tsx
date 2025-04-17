@@ -3,6 +3,7 @@ import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone } from "lucide-reac
 
 const Footer = () => {
   const year = new Date().getFullYear();
+
   return (
     <footer className="bg-black text-white pt-16 pb-6">
       <div className="container mx-auto px-4 md:px-6">
@@ -13,21 +14,45 @@ const Footer = () => {
               Transforming digital presence with strategy-led digital marketing solutions.
             </p>
             <div className="flex space-x-4 mt-6">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-gray-400 hover:text-hustle-accent transition-colors">
-                <Facebook size={20} />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-gray-400 hover:text-hustle-accent transition-colors">
+              <a 
+                href="https://twitter.com/hustledigital" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Twitter"
+                className="text-gray-400 hover:text-hustle-accent transition-colors"
+              >
                 <Twitter size={20} />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-gray-400 hover:text-hustle-accent transition-colors">
+              <a 
+                href="https://facebook.com/hustledigital" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Facebook"
+                className="text-gray-400 hover:text-hustle-accent transition-colors"
+              >
+                <Facebook size={20} />
+              </a>
+              <a 
+                href="https://instagram.com/hustledigital" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Instagram"
+                className="text-gray-400 hover:text-hustle-accent transition-colors"
+              >
                 <Instagram size={20} />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-gray-400 hover:text-hustle-accent transition-colors">
+              <a 
+                href="https://linkedin.com/company/hustledigital" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="LinkedIn"
+                className="text-gray-400 hover:text-hustle-accent transition-colors"
+              >
                 <Linkedin size={20} />
               </a>
             </div>
           </div>
-          
+
           <div>
             <h4 className="text-lg font-medium mb-4">Quick Links</h4>
             <ul className="space-y-2">
@@ -53,7 +78,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="text-lg font-medium mb-4">Services</h4>
             <ul className="space-y-2">
@@ -79,7 +104,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="text-lg font-medium mb-4">Contact Us</h4>
             <ul className="space-y-2 text-gray-400">
@@ -95,23 +120,21 @@ const Footer = () => {
               </li>
             </ul>
             <div className="mt-4">
-              <Link to="/contact" className="inline-block bg-white text-black px-4 py-2 rounded-md font-medium hover:bg-gray-200 transition-colors">
+              <Link 
+                to="/contact" 
+                className="inline-block bg-white text-black px-4 py-2 rounded-md font-medium hover:bg-gray-200 transition-colors"
+              >
                 Book a Free Audit
               </Link>
             </div>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-800 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm mb-4 md:mb-0">
               &copy; {year} Hustle Digital. All rights reserved.
             </p>
-            <div className="flex space-x-4">
-              <Link to="/privacy" className="text-gray-500 text-sm hover:text-white transition-colors">
-                Privacy Policy
-              </Link>
-            </div>
           </div>
         </div>
       </div>
