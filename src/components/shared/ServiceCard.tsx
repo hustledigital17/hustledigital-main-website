@@ -15,20 +15,19 @@ const ServiceCard = ({ title, description, icon, delay = "animate-delay-100" }: 
   return (
     <motion.div
       whileHover={{ 
-        y: -8,
-        transition: { duration: 0.4, ease: [0.23, 1, 0.32, 1] }
+        y: -4,
+        transition: { duration: 0.3, ease: "easeOut" }
       }}
-      className="h-full"
+      className="h-full relative"
     >
-      <Card className="h-full overflow-hidden group border border-gray-200 hover:border-hustle-accent hover:shadow-xl transition-all duration-300 bg-gradient-to-b from-white to-gray-50/50">
-        <CardHeader className="pb-2 relative">
-          <div className="absolute top-0 right-0 w-24 h-24 bg-hustle-accent/5 rounded-bl-[48px] transform translate-x-10 -translate-y-10 group-hover:bg-hustle-accent/10 transition-colors duration-300"></div>
+      <Card className="h-full group border border-gray-200 hover:border-hustle-accent hover:shadow-xl transition-all duration-300 bg-gradient-to-b from-white to-gray-50/50">
+        <CardHeader className="pb-2 relative overflow-visible">
+          <div className="absolute top-0 right-0 w-24 h-24 bg-hustle-accent/5 rounded-bl-[48px] transform translate-x-8 -translate-y-8 group-hover:bg-hustle-accent/10 transition-colors duration-300"></div>
           <div className="flex items-start gap-4">
             <motion.div 
               className="text-hustle-accent relative z-10 bg-white/80 backdrop-blur-sm w-12 h-12 rounded-xl flex items-center justify-center shadow-sm group-hover:shadow-md group-hover:bg-white transition-all duration-300 flex-shrink-0"
-              initial={{ scale: 1, rotate: 0 }}
-              whileHover={{ scale: 1.1, rotate: 5 }}
-              transition={{ duration: 0.3 }}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
             >
               {icon}
             </motion.div>
@@ -54,7 +53,7 @@ const ServiceCard = ({ title, description, icon, delay = "animate-delay-100" }: 
             </span>
             <motion.div
               initial={{ x: 0 }}
-              whileHover={{ x: 5 }}
+              whileHover={{ x: 3 }}
               transition={{ duration: 0.2 }}
               className="ml-1.5"
             >

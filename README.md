@@ -1,73 +1,71 @@
-# Welcome to your Lovable project
+# Welcome to your hustledigital project
 
-## Project info
+This repository contains the source code for your website.
 
-**URL**: https://lovable.dev/projects/4f46adbe-f18c-4be8-8f52-686206fcb5f6
+**URL**: https://hustledigital.dev/projects/4f46adbe-f18c-4be8-8f52-686206fcb5f6
 
-## How can I edit this code?
+## Getting Started
 
-There are several ways of editing your application.
+### Option 1 (Recommended)
+**Use hustledigital**
 
-**Use Lovable**
+Simply visit the [hustledigital Project](https://hustledigital.dev/projects/4f46adbe-f18c-4be8-8f52-686206fcb5f6) and start prompting.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/4f46adbe-f18c-4be8-8f52-686206fcb5f6) and start prompting.
+Changes made via hustledigital will be committed automatically to this repo.
 
-Changes made via Lovable will be committed automatically to this repo.
+### Option 2
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in hustledigital.
 
-**Use your preferred IDE**
+## Development
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
+- Node.js 18+
+- npm or yarn
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+### Installation
+1. Clone the repository
+```bash
+git clone <repository-url>
 ```
 
-**Edit a file directly in GitHub**
+2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+3. Start the development server
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-**Use GitHub Codespaces**
+4. Open your browser and visit `http://localhost:5173`
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Building for Production
 
-## What technologies are used for this project?
+To create a production build:
 
-This project is built with:
+```bash
+npm run build
+# or
+yarn build
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Deployment
 
-## How can I deploy this project?
+### How do I deploy my website?
 
-Simply open [Lovable](https://lovable.dev/projects/4f46adbe-f18c-4be8-8f52-686206fcb5f6) and click on Share -> Publish.
+Simply open [hustledigital](https://hustledigital.dev/projects/4f46adbe-f18c-4be8-8f52-686206fcb5f6) and click on Share -> Publish.
 
-## Can I connect a custom domain to my Lovable project?
+## Can I connect a custom domain to my hustledigital project?
 
-Yes, you can!
+Yes! You can connect any domain you own to your project.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+1. Add your domain in the Share -> Custom Domain section
+2. Update your DNS settings
+3. Wait for DNS propagation (usually takes 5-10 minutes)
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Read more here: [Setting up a custom domain](https://docs.hustledigital.dev/tips-tricks/custom-domain#step-by-step-guide)

@@ -8,7 +8,10 @@ import {
   Search, 
   MessageSquare,
   Mail,
-  Code
+  Code,
+  LayoutGrid,
+  Camera,
+  Star
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -41,43 +44,53 @@ const ServicesCarousel = () => {
   const services = [
     {
       title: "Full Stack Website Development",
-      description: "Custom websites designed for performance, conversions, and exceptional user experience.",
+      description: "Custom websites designed to convert visitors into customers. We build responsive, fast-loading sites with SEO fundamentals baked in.",
       icon: <Laptop size={28} />
     },
     {
-      title: "Social Media Marketing",
-      description: "Strategic social media campaigns that build engagement and strengthen brand loyalty.",
-      icon: <Users size={28} />
+      title: "Google My Business Setup & Management",
+      description: "Maximize your local presence with optimized Google Business profiles that improve visibility and drive local customers.",
+      icon: <LayoutGrid size={28} />
     },
     {
       title: "Business Strategy Consulting",
-      description: "Expert guidance to align your digital efforts with your business objectives.",
+      description: "Strategic guidance to align your digital efforts with your business goals for maximum ROI and sustainable growth.",
       icon: <TrendingUp size={28} />
     },
     {
-      title: "Data Analytics",
-      description: "Transform your data into valuable insights that drive better business decisions.",
-      icon: <BarChart size={28} />
-    },
-    {
-      title: "SEO Optimization",
-      description: "Improve your search engine rankings and drive more qualified traffic to your website.",
+      title: "Free Website Audit",
+      description: "Comprehensive analysis of your website's performance, SEO, usability, and conversion optimization opportunities.",
       icon: <Search size={28} />
     },
     {
-      title: "Content Creation",
-      description: "Engaging, SEO-optimized content that resonates with your audience and drives conversions.",
-      icon: <MessageSquare size={28} />
+      title: "Social Media Marketing",
+      description: "Strategic social media campaigns that build engagement, strengthen brand loyalty, and drive conversions.",
+      icon: <Users size={28} />
     },
     {
       title: "Email Marketing",
-      description: "Targeted email campaigns that nurture leads and drive repeat business.",
+      description: "Targeted email campaigns that nurture leads, drive sales, and build lasting customer relationships.",
       icon: <Mail size={28} />
     },
     {
-      title: "App Development",
-      description: "Custom mobile and web applications that solve real business problems.",
-      icon: <Code size={28} />
+      title: "Performance Marketing",
+      description: "Data-driven campaigns focused on delivering measurable results and maximizing your marketing ROI.",
+      icon: <TrendingUp size={28} />
+    },
+    {
+      title: "Content & Copywriting",
+      description: "Compelling content that tells your brand story, engages your audience, and drives action.",
+      icon: <MessageSquare size={28} />
+    },
+    {
+      title: "Content Production",
+      description: "High-quality visual content that captures attention and communicates your brand message effectively.",
+      icon: <Camera size={28} />
+    },
+    {
+      title: "Review Collection & Management",
+      description: "Proactive strategies to gather positive reviews and manage your online reputation across platforms.",
+      icon: <Star size={28} />
     }
   ];
 
