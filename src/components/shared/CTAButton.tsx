@@ -26,17 +26,18 @@ const CTAButton = ({
   let buttonClass = "";
   switch (variant) {
     case "black":
-      buttonClass = "bg-black text-white hover:bg-black/90";
+      buttonClass = "bg-black text-white hover:bg-black/90 shadow-md hover:shadow-lg";
       break;
     case "white":
-      buttonClass = "bg-white text-black hover:bg-white/90";
+      buttonClass = "bg-white text-black hover:bg-white/90 shadow-md hover:shadow-lg";
       break;
     case "outline":
       buttonClass = "bg-transparent border border-current text-current hover:bg-hustle-muted/10";
       break;
     default:
-      buttonClass = "bg-hustle-accent text-white hover:bg-hustle-accent/90";
+      buttonClass = "bg-hustle-accent text-white hover:bg-hustle-accent/90 shadow-md hover:shadow-lg";
   }
+  
   const handleClick = () => {
     // Scroll to top when link is clicked with smooth behavior
     window.scrollTo({
@@ -44,18 +45,20 @@ const CTAButton = ({
       behavior: 'smooth'
     });
   };
+  
   return (
     <Button 
       asChild 
-      className={`rounded-md font-medium ${buttonClass} ${className || ""}`} 
+      className={`rounded-md font-medium ${buttonClass} ${className || ""} transition-all duration-300 hover:-translate-y-1`} 
       size={size} 
       {...props}
     >
       <Link to={to} onClick={handleClick} className="flex items-center gap-2">
         {text}
-        {icon && <ArrowRight className="h-4 w-4" />}
+        {icon && <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />}
       </Link>
     </Button>
   );
 };
+
 export default CTAButton;

@@ -19,8 +19,9 @@ const ServiceCard = ({ title, description, icon, delay = "animate-delay-100" }: 
         y: -5,
         transition: { duration: 0.3, ease: "easeOut" }
       }}
+      className="h-full"
     >
-      <Card className={`h-full overflow-hidden group border border-gray-200 hover:border-hustle-accent/50 hover:shadow-lg transition-all duration-300`}>
+      <Card className="h-full overflow-hidden group border border-gray-200 hover:border-hustle-accent/50 hover:shadow-lg transition-all duration-300">
         <CardHeader className="pb-2 relative">
           <div className="absolute top-0 right-0 w-20 h-20 bg-hustle-accent/5 rounded-bl-full transform translate-x-8 -translate-y-8"></div>
           <motion.div 
@@ -33,11 +34,11 @@ const ServiceCard = ({ title, description, icon, delay = "animate-delay-100" }: 
           </motion.div>
           <CardTitle className="text-xl relative z-10">{title}</CardTitle>
         </CardHeader>
-        <CardContent>
-          <CardDescription className="text-base mb-4 text-black">{description}</CardDescription>
+        <CardContent className="flex flex-col h-[calc(100%-80px)]">
+          <CardDescription className="text-base mb-4 text-black flex-grow">{description}</CardDescription>
           <Link 
             to="/services" 
-            className="inline-flex items-center text-sm font-medium text-hustle-accent group-hover:underline"
+            className="inline-flex items-center text-sm font-medium text-hustle-accent group-hover:underline mt-auto"
           >
             Learn more 
             <motion.div
