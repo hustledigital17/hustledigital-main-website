@@ -25,5 +25,15 @@ export default defineConfig(({ mode }) => ({
   },
   css: {
     devSourcemap: true,
+  },
+  build: {
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+      },
+    },
+  },
+  preview: {
+    historyApiFallback: true,
   }
 }));
