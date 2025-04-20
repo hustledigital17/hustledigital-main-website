@@ -175,7 +175,7 @@ const Services = () => {
               Email us directly at <a href="mailto:hustledigi@gmail.com" className="text-hustle-accent hover:underline">hustledigi@gmail.com</a>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fade-in animate-delay-200">
-              <CTAButton text="Book a Free Audit" to="/contact" size="lg" />
+              <CTAButton text="Book a Free Consultation" to="https://calendly.com/hustledigi/30min" size="lg" />
               <CTAButton text="Contact Us" to="/contact" variant="outline" size="lg" />
             </div>
             <div className="mt-8 opacity-0 animate-fade-in animate-delay-300">

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, Phone } from "lucide-react";
+import { ButtonLink } from "../ui/button-link";
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -14,15 +15,6 @@ const Footer = () => {
               Transforming digital presence with strategy-led digital marketing solutions.
             </p>
             <div className="flex space-x-4 mt-6">
-              <a 
-                href="https://twitter.com/hustledigital" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                aria-label="Twitter"
-                className="text-gray-400 hover:text-hustle-accent transition-colors"
-              >
-                <Twitter size={20} />
-              </a>
               <a 
                 href="https://facebook.com/hustledigital" 
                 target="_blank" 
@@ -120,12 +112,14 @@ const Footer = () => {
               </li>
             </ul>
             <div className="mt-4">
-              <Link 
-                to="/contact" 
-                className="inline-block bg-white text-black px-4 py-2 rounded-md font-medium hover:bg-gray-200 transition-colors"
+              <ButtonLink
+                href="https://calendly.com/hustledigi/30min"
+                variant="white"
+                size="lg"
+                className="shadow-lg shadow-hustle-accent/10"
               >
-                Book a Free Audit
-              </Link>
+                Book a Free Consultation
+              </ButtonLink>
             </div>
           </div>
         </div>

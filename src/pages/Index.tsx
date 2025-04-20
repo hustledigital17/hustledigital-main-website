@@ -63,7 +63,7 @@ const Index = () => {
             >
               <CTAButton 
                 text="Book a Free Consultation" 
-                to="/contact" 
+                to="https://calendly.com/hustledigi/30min" 
                 size="lg" 
                 icon={true} 
                 className="w-full sm:w-auto h-[56px] text-lg"
@@ -109,7 +109,7 @@ const Index = () => {
         </div>
         
         <div className="mt-16 text-center opacity-0 animate-fade-in animate-delay-400 space-y-4">
-          <CTAButton text="Book a Free Consultation" to="/contact" size="lg" className="mx-auto" icon={true} />
+          <CTAButton text="Book a Free Consultation" to="https://calendly.com/hustledigi/30min" size="lg" className="mx-auto" icon={true} />
         </div>
       </div>
     </section>
@@ -149,7 +149,7 @@ const Index = () => {
           />
           <CTAButton 
             text="Book a Free Consultation" 
-            to="/contact" 
+            to="https://calendly.com/hustledigi/30min" 
             variant="outline" 
             size="lg" 
             className="w-full sm:w-auto min-w-[200px]" 
@@ -172,7 +172,7 @@ const Index = () => {
         </div>
         
         <div className="mt-16 text-center opacity-0 animate-fade-in animate-delay-300">
-          <CTAButton text="Book a Free Consultation" to="/contact" size="lg" className="mx-auto" icon={true} />
+          <CTAButton text="Book a Free Consultation" to="https://calendly.com/hustledigi/30min" size="lg" className="mx-auto" icon={true} />
         </div>
       </div>
     </section>
@@ -222,7 +222,7 @@ const Index = () => {
             duration: 0.6,
             delay: 0.2
           }}>
-            <CTAButton text="Book a Free Consultation" to="/contact" variant="white" size="lg" icon={true} />
+            <CTAButton text="Book a Free Consultation" to="https://calendly.com/hustledigi/30min" variant="white" size="lg" icon={true} />
             <CTAButton text="Explore Our Services" to="/services" variant="outline" size="lg" className="text-white" />
           </motion.div>
         </div>
@@ -274,7 +274,7 @@ const Index = () => {
           
           <div className="mt-16 flex flex-col items-center gap-4 max-w-[440px] mx-auto">
             <CTAButton text="View All FAQs" to="/faq" variant="outline" className="w-full" />
-            <CTAButton text="Book a Free Consultation" to="/contact" size="lg" className="w-full" icon={true} />
+            <CTAButton text="Book a Free Consultation" to="https://calendly.com/hustledigi/30min" size="lg" className="w-full" icon={true} />
           </div>
         </div>
       </div>

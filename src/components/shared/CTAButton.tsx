@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -14,6 +13,7 @@ interface CTAButtonProps {
   className?: string;
   size?: "default" | "sm" | "lg" | "icon";
 }
+
 const CTAButton = ({
   text,
   to,
@@ -42,12 +42,16 @@ const CTAButton = ({
   }
   
   const handleClick = () => {
-    // Scroll to top when link is clicked with smooth behavior
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    // Only scroll to top for internal links
+    if (!to.startsWith('http')) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
   };
+
+  const isExternal = to.startsWith('http');
   
   return (
     <Button 
@@ -70,10 +74,26 @@ const CTAButton = ({
       size={size} 
       {...props}
     >
-      <Link to={to} onClick={handleClick} className="flex items-center justify-center gap-2">
-        {text}
-        {icon && <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />}
-      </Link>
+      {isExternal ? (
+        <a 
+          href={to} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2"
+        >
+          {text}
+          {icon && <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />}
+        </a>
+      ) : (
+        <Link 
+          to={to} 
+          onClick={handleClick} 
+          className="flex items-center justify-center gap-2"
+        >
+          {text}
+          {icon && <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />}
+        </Link>
+      )}
     </Button>
   );
 };

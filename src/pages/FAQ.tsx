@@ -1,4 +1,3 @@
-
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import SectionHeader from "@/components/shared/SectionHeader";
 import CTAButton from "@/components/shared/CTAButton";
@@ -168,7 +167,7 @@ const FAQ = () => {
               </div>
               <CTAButton 
                 text="Contact Us" 
-                to="/contact" 
+                to="https://calendly.com/hustledigi/30min"
                 className="flex-shrink-0"
               />
             </div>

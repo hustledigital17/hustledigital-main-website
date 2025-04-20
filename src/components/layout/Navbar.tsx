@@ -76,11 +76,11 @@ const Navbar = () => {
                 </Link>
               ))}
               <ButtonLink
-                href="/contact"
+                href="https://calendly.com/hustledigi/30min"
                 variant="primary"
                 size="sm"
               >
-                Book Appointment
+                Book a Free Consultation
               </ButtonLink>
             </div>
 
@@ -175,13 +175,13 @@ const Navbar = () => {
                 {/* Menu Footer */}
                 <div className="p-6 border-t border-gray-100">
                   <ButtonLink
-                    href="/contact"
+                    href="https://calendly.com/hustledigi/30min"
                     variant="primary"
                     fullWidth
                     size="lg"
                     className="shadow-lg shadow-hustle-accent/10"
                   >
-                    Book Appointment
+                    Book a Free Consultation
                   </ButtonLink>
                 </div>
               </div>

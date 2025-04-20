@@ -26,7 +26,7 @@ const About = () => {
                 Whether you're just getting started or ready to level up, we've got the tools, the team, and the energy to make it happen.
               </p>
               <div className="opacity-0 animate-fade-in animate-delay-500">
-                <CTAButton text="Work With Us" to="/contact" size="lg" />
+                <CTAButton text="Work With Us" to="https://calendly.com/hustledigi/30min" size="lg" />
               </div>
             </div>
             <div className="w-full md:w-1/2 relative opacity-0 animate-fade-in animate-delay-300">
@@ -111,7 +111,7 @@ const About = () => {
                   </div>} />
               
               <div className="mt-8">
-                <CTAButton text="Start Your Journey" to="/contact" size="lg" />
+                <CTAButton text="Start Your Journey" to="https://calendly.com/hustledigi/30min" size="lg" />
               </div>
             </div>
           </div>

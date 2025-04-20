@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 
 interface ButtonLinkProps {
   href: string;
-  variant?: "default" | "primary" | "outline" | "ghost";
+  variant?: "default" | "primary" | "outline" | "ghost" | "white";
   size?: "default" | "sm" | "lg";
   fullWidth?: boolean;
   showArrow?: boolean;
@@ -29,7 +29,8 @@ export const ButtonLink: React.FC<ButtonLinkProps> = ({
     default: "bg-primary text-white hover:bg-primary/90",
     primary: "bg-primary text-white hover:bg-primary/90 shadow-sm hover:shadow-md",
     outline: "border-2 border-primary text-primary hover:bg-primary hover:text-white",
-    ghost: "text-primary hover:bg-primary/10"
+    ghost: "text-primary hover:bg-primary/10",
+    white: "bg-white text-black hover:bg-white/90 shadow-sm hover:shadow-md"
   };
 
   const sizeStyles = {
@@ -37,6 +38,8 @@ export const ButtonLink: React.FC<ButtonLinkProps> = ({
     sm: "h-[40px] min-w-[160px] px-4 text-sm",
     lg: "h-[60px] min-w-[240px] px-8 text-lg"
   };
+
+  const isExternal = href.startsWith('http');
 
   return (
     <Button
@@ -50,14 +53,27 @@ export const ButtonLink: React.FC<ButtonLinkProps> = ({
         className
       )}
     >
-      <Link 
-        to={href} 
-        onClick={onClick}
-        className="flex items-center justify-center gap-2 w-full h-full"
-      >
-        {children}
-        {showArrow && <ArrowRight className="h-5 w-5 ml-2 flex-shrink-0" />}
-      </Link>
+      {isExternal ? (
+        <a 
+          href={href}
+          onClick={onClick}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 w-full h-full"
+        >
+          {children}
+          {showArrow && <ArrowRight className="h-5 w-5 ml-2 flex-shrink-0" />}
+        </a>
+      ) : (
+        <Link 
+          to={href} 
+          onClick={onClick}
+          className="flex items-center justify-center gap-2 w-full h-full"
+        >
+          {children}
+          {showArrow && <ArrowRight className="h-5 w-5 ml-2 flex-shrink-0" />}
+        </Link>
+      )}
     </Button>
   );
 }; 

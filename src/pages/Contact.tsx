@@ -349,7 +349,7 @@ const Contact = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Free Consultation</h3>
                 <p className="text-hustle-light text-center mb-6">Get expert advice on your digital marketing strategy.</p>
-                <CTAButton text="Book Now" to="#contact-form" variant="black" size="sm" />
+                <CTAButton text="Book Now" to="https://calendly.com/hustledigi/30min" variant="black" size="sm" />
               </div>
             </div>
           </div>
