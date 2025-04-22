@@ -25,7 +25,7 @@ const Footer = () => {
                 <Facebook size={20} />
               </a>
               <a 
-                href="https://instagram.com/hustledigital" 
+                href="https://www.instagram.com/_hustledigital_?igsh=MXFhb3JrbXV2OW1w" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 aria-label="Instagram"
