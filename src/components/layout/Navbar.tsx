@@ -57,7 +57,10 @@ const Navbar = () => {
         <div className="container mx-auto px-4">
           <nav className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
-            <Link to="/" className="relative z-50 flex items-center">
+            <Link
+              to="/"
+              className={`relative z-50 flex items-center transition-opacity duration-200 ${isOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+            >
               <img
                 src="/logo.png"
                 alt="Hustle Digital Logo"
@@ -145,14 +148,16 @@ const Navbar = () => {
               className="fixed top-0 right-0 bottom-0 w-[280px] sm:w-[350px] bg-white z-40 md:hidden flex flex-col"
             >
               <div className="flex flex-col h-full overflow-y-auto">
-                {/* Menu Header */}
-                <div className="p-6 border-b border-gray-100">
-                  <h2 className="text-xl font-semibold">Menu</h2>
+                {/* Menu Header with centered title only */}
+                <div className="flex flex-col items-center justify-center p-6 border-b border-gray-100">
+                  <h2 className="text-2xl font-bold tracking-wide">Menu</h2>
                 </div>
+                {/* Divider */}
+                <div className="border-b border-gray-200" />
 
                 {/* Menu Items */}
-                <nav className="flex-1 px-4 py-6">
-                  <div className="flex flex-col space-y-1">
+                <nav className="flex-1 px-4 py-8">
+                  <div className="flex flex-col space-y-3">
                     {menuItems.map((item, index) => (
                       <motion.div
                         key={item.path}
@@ -163,7 +168,7 @@ const Navbar = () => {
                         <Link
                           to={item.path}
                           onClick={() => setIsOpen(false)}
-                          className={`flex items-center h-12 px-4 rounded-lg text-base font-medium transition-colors ${
+                          className={`flex items-center h-12 px-4 rounded-lg text-lg font-medium transition-colors ${
                             location.pathname === item.path
                               ? "bg-hustle-accent/5 text-hustle-accent"
                               : "hover:bg-gray-50"
