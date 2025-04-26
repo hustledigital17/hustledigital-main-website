@@ -10,17 +10,19 @@ const Footer = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
-            <h3 className="text-xl font-medium mb-4">Hustle Digital</h3>
+            <div className="flex items-center mb-4">
+              <img src="/logobb.png" alt="Hustle Digital Logo" className="h-20 md:h-28 w-auto max-w-full" style={{ maxWidth: '220px' }} />
+            </div>
             <p className="text-gray-400 mb-4">
               Transforming digital presence with strategy-led digital marketing solutions.
             </p>
             <div className="flex space-x-4 mt-6">
-              <a 
-                href="https://facebook.com/hustledigital" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://www.facebook.com/share/1A5u8RB2yM/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="text-gray-400 hover:text-hustle-accent transition-colors"
+                className="hover:text-hustle-accent transition-colors"
               >
                 <Facebook size={20} />
               </a>
@@ -32,15 +34,6 @@ const Footer = () => {
                 className="text-gray-400 hover:text-hustle-accent transition-colors"
               >
                 <Instagram size={20} />
-              </a>
-              <a 
-                href="https://linkedin.com/company/hustledigital" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                aria-label="LinkedIn"
-                className="text-gray-400 hover:text-hustle-accent transition-colors"
-              >
-                <Linkedin size={20} />
               </a>
             </div>
           </div>

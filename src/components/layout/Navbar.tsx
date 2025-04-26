@@ -57,10 +57,13 @@ const Navbar = () => {
         <div className="container mx-auto px-4">
           <nav className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
-            <Link to="/" className="relative z-50">
-              <span className="text-lg md:text-xl font-bold">
-                Hustle Digital
-              </span>
+            <Link to="/" className="relative z-50 flex items-center">
+              <img
+                src="/logo.png"
+                alt="Hustle Digital Logo"
+                className="h-20 md:h-28 w-auto max-w-[320px] md:max-w-[400px] object-contain"
+                style={{ minHeight: '80px' }}
+              />
             </Link>
 
             {/* Desktop Navigation */}

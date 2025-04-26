@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Mail } from "lucide-react";
+import { Facebook, Instagram, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface SocialMediaLinksProps {
@@ -17,10 +17,11 @@ const SocialMediaLinks = ({
   return (
     <div className={`flex items-center space-x-4 ${className}`}>
       <a
-        href="https://facebook.com/hustledigital"
+        href="https://www.facebook.com/share/1A5u8RB2yM/?mibextid=wwXIfr"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Facebook"
+        className="hover:text-hustle-accent transition-colors"
       >
         <Facebook size={iconSize} className={iconClassName} />
       </a>
@@ -31,14 +32,6 @@ const SocialMediaLinks = ({
         aria-label="Instagram"
       >
         <Instagram size={iconSize} className={iconClassName} />
-      </a>
-      <a
-        href="https://linkedin.com/company/hustledigital"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="LinkedIn"
-      >
-        <Linkedin size={iconSize} className={iconClassName} />
       </a>
       {showEmail && (
         <a

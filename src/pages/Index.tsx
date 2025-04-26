@@ -99,13 +99,13 @@ const Index = () => {
         <SectionHeader subtitle="Why Choose Us" title="Digital Excellence, Measurable Results" description="At Hustle Digital, we combine strategic thinking with cutting-edge execution to transform your digital presence." center={true} />
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mt-16">
-          <WhyChooseUsCard title="Proven Expertise" description="Years of experience delivering successful digital marketing campaigns across multiple industries." icon={<ShieldCheck className="text-hustle-accent" />} number="1" stats="10+ Years Experience" delay="" />
+          <WhyChooseUsCard title="Proven Expertise" description="Years of experience delivering successful digital marketing campaigns across multiple industries." icon={<ShieldCheck className="text-hustle-accent" />} number="1" stats="8+ Years Experience" delay="" />
           
           <WhyChooseUsCard title="Data-Driven" description="Strategic decisions backed by analytics and performance metrics to ensure optimal results." icon={<TrendingUp className="text-hustle-accent" />} number="2" stats="237% Average ROI" delay="animate-delay-100" />
           
-          <WhyChooseUsCard title="ROI Focused" description="Campaigns designed to maximize your return on investment and deliver tangible business growth." icon={<DollarSign className="text-hustle-accent" />} number="3" stats="$4.2M+ Revenue Generated" delay="animate-delay-200" />
+          <WhyChooseUsCard title="ROI Focused" description="Campaigns designed to maximize your return on investment and deliver tangible business growth." icon={<DollarSign className="text-hustle-accent" />} number="3" stats="$1.2M+ Revenue Generated" delay="animate-delay-200" />
           
-          <WhyChooseUsCard title="Client Success" description="Dedicated support team committed to your business goals and long-term success." icon={<Users className="text-hustle-accent" />} number="4" stats="98% Client Retention" delay="animate-delay-300" />
+          <WhyChooseUsCard title="Client Success" description="Dedicated support team committed to your business goals and long-term success." icon={<Users className="text-hustle-accent" />} number="4" stats="99% Client Retention" delay="animate-delay-300" />
         </div>
         
         <div className="mt-16 text-center opacity-0 animate-fade-in animate-delay-400 space-y-4">
@@ -163,12 +163,25 @@ const Index = () => {
       <div className="container mx-auto px-6 md:px-8">
         <SectionHeader subtitle="Client Testimonials" title="What Our Clients Say" description="Don't just take our word for it. Here's what our clients have to say about working with Hustle Digital." center={true} />
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16">
-          <TestimonialCard quote="Hustle Digital transformed our online presence completely. Their strategic approach to digital marketing helped us increase our conversion rates by 150% in just three months." name="Sarah Mitchell" title="CEO, TechStart Inc." imgSrc="/lovable-uploads/04672ee9-38e1-4113-8c0c-bd7b684b833a.png" delay="" />
-          
-          <TestimonialCard quote="Working with Hustle Digital has been a game-changer. Their team understood our brand's voice and created content that truly resonates with our audience. Our social media engagement is up by 200%." name="James Davis" title="Marketing Director, Retail Solutions" imgSrc="/lovable-uploads/7fa6cf9e-4dea-4299-9009-758c8c52b8a1.png" delay="animate-delay-100" />
-          
-          <TestimonialCard quote="The website Hustle Digital built for us not only looks fantastic but performs incredibly well. Our load times decreased by 70%, and our bounce rate dropped significantly. The ROI has been incredible." name="Alicia Parker" title="Founder, Bloom Boutique" imgSrc="/lovable-uploads/95d19366-18a3-4410-91ac-2ce3073cc326.png" delay="animate-delay-200" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <TestimonialCard
+            quote="Hustle Digital transformed our online presence completely. Their strategic approach to digital marketing helped us increase our conversion rates by 150% in just three months."
+            name="Ankita Thakur"
+            title="Founder, Dipitreats."
+            delay="animate-delay-100"
+          />
+          <TestimonialCard
+            quote="Working with Hustle Digital has been a game-changer. Their team understood our brand's voice and created content that truly resonates with our audience. Our social media engagement has doubled since we started working with them."
+            name="Ananya Joshi"
+            title="Founder, Bloom Interiors"
+            delay="animate-delay-100"
+          />
+          <TestimonialCard
+            quote="The website Hustle Digital built for us not only looks fantastic but performs incredibly well. Our load times decreased by 70%, and our bounce rate dropped significantly. The ROI has been outstanding."
+            name="Saurav Patel"
+            title="Founder, GreenAura Organic"
+            delay="animate-delay-100"
+          />
         </div>
         
         <div className="mt-16 text-center opacity-0 animate-fade-in animate-delay-300">
